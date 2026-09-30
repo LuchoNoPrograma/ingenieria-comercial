@@ -4,13 +4,15 @@ Landing estática publicada en https://luchonoprograma.github.io/ingenieria-come
 
 ## Contenido y diseño
 
-- Composición basada en la web original de Canva: fondos naranjas, paneles durazno redondeados, fotografías de actividades y tarjetas con texto superpuesto.
+- Composición basada en la web original de Canva: naranja original en la presentación, fondos crema y arena para las secciones de lectura, paneles durazno redondeados y fotografías de actividades.
 - Misión y visión transcritas del folleto proporcionado por el solicitante.
 - Cuatro fotografías originales de Canva, descargadas y servidas localmente.
-- Botón de WhatsApp con el icono original verde y el tratamiento original naranja, blanco y subrayado.
-- Sección de TikTok con los tres videos extraídos de Canva: dos verticales y una presentación horizontal. Controles nativos, sin reproducción automática y carga bajo demanda. Al reproducir uno se pausan los demás.
+- Botón de WhatsApp con el icono original verde y texto blanco subrayado; naranja oscuro ajustado para un contraste de 6,09:1.
+- Presentación horizontal original en una sección amplia e independiente, con el logo al lado. Sección de TikTok con los dos videos verticales originales. Controles nativos, sin reproducción automática y carga bajo demanda. Al reproducir uno se pausan los demás.
 - Perfil de TikTok tomado de la marca de agua de los videos: `@uap_1993`.
-- Animaciones de aparición, desplazamiento suave, navegación móvil y soporte de movimiento reducido.
+- Entrada con blur y fade de 750 ms, apariciones al desplazarse, navegación móvil y soporte de movimiento reducido.
+- Logo proporcionado por el solicitante reutilizado sin modificaciones en cabecera, presentación, pie, favicon y apple-touch-icon (`assets/logo.png`).
+- Registro como acción principal en cabecera, portada y bloque final independiente; abre el formulario original de Canva. El acceso a WhatsApp ocupa un bloque separado, con mayor espaciado.
 
 ## Fuentes
 
@@ -30,6 +32,6 @@ Editar `index.html` para textos y enlaces; `styles.css` para apariencia; `script
 python3 -m http.server 4173
 ```
 
-Abrir http://localhost:4173. No hay dependencias ni compilación.
+Abrir http://localhost:4173. No hay dependencias ni compilación. Para probar también el avance de los videos, usar un servidor con soporte HTTP Range, por ejemplo `npx http-server -p 4174`; GitHub Pages admite estas peticiones.
 
 GitHub Pages publica la raíz de `main` en cada push.

@@ -1,3 +1,8 @@
+// A 750 ms blur-to-focus entrance; CSS disables it for reduced motion.
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.documentElement.classList.add("entrance-ready");
+}
+
 const header = document.querySelector(".site-header");
 const menu = document.querySelector("#navigation");
 const menuToggle = document.querySelector(".menu-toggle");
