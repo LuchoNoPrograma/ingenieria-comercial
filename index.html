@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#172742" />
+    <meta name="theme-color" content="#ed950d" />
     <title>Ingeniería Comercial · ICOM</title>
     <meta
       name="description"
-      content="Conoce la misión y visión de Ingeniería Comercial. Estrategia, marketing y emprendimiento para transformar tu futuro. Únete a nuestra comunidad."
+      content="Ingeniería Comercial: conoce nuestra misión, visión y comunidad universitaria. Únete al grupo de WhatsApp."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_BO" />
     <meta
       property="og:title"
-      content="Ingeniería Comercial · Ideas que mueven el mundo"
+      content="Ingeniería Comercial · Nuestra comunidad"
     />
     <meta
       property="og:description"
-      content="Estrategia, innovación y emprendimiento. Conoce nuestro propósito y forma parte de la comunidad de Ingeniería Comercial."
+      content="Aprende, participa y conecta. Conoce nuestra misión y visión y únete a la comunidad."
     />
     <meta
       property="og:image"
-      content="https://luchonoprograma.github.io/ingenieria-comercial/assets/hero-sculpture.png"
+      content="https://luchonoprograma.github.io/ingenieria-comercial/assets/original/dea74f15db06b801256592c44997a445.jpg"
     />
     <meta
       property="og:url"
@@ -31,14 +31,7 @@
       rel="canonical"
       href="https://luchonoprograma.github.io/ingenieria-comercial/"
     />
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
-    <link
-      rel="preload"
-      href="./assets/fonts/font-2.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
@@ -49,150 +42,265 @@
         <a
           class="brand"
           href="#inicio"
-          aria-label="ICOM · Ingeniería Comercial, inicio"
+          aria-label="Ingeniería Comercial, inicio"
+          >CARRERA<br />PROFESIONAL<span>INGENIERÍA COMERCIAL</span></a
         >
-          <span class="brand-mark">ICOM</span
-          ><span class="brand-name">Ingeniería<br />Comercial</span>
-        </a>
         <button
           class="menu-toggle"
-          type="button"
           aria-label="Abrir menú"
-          aria-controls="navigation"
           aria-expanded="false"
+          aria-controls="navigation"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
         </button>
         <nav class="nav" id="navigation" aria-label="Navegación principal">
-          <a class="nav-link" href="#inicio">La carrera</a>
-          <a class="nav-link" href="#proposito">Nuestro propósito</a>
+          <a class="nav-link active" href="#inicio">Información</a
+          ><a class="nav-link" href="#mision">Misión</a
+          ><a class="nav-link" href="#vision">Visión</a
+          ><a class="nav-link" href="#redes">TikTok</a>
           <a class="nav-link" href="#comunidad">Comunidad</a>
-          <a class="button" href="#comunidad">Hablemos</a>
         </nav>
       </div>
     </header>
-
     <main id="contenido">
-      <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="wrap hero-inner">
+      <section id="inicio" class="intro wrap" aria-labelledby="hero-title">
+        <div class="hero-panel reveal">
+          <img
+            class="hero-photo"
+            src="./assets/original/dea74f15db06b801256592c44997a445.jpg"
+            alt="Encuentro de estudiantes de la Universidad Amazónica de Pando"
+            width="1600"
+            height="1066"
+            fetchpriority="high"
+          />
           <div class="hero-copy">
-            <h1 id="hero-title" class="reveal">
-              Ideas que<br />mueven el<br /><em>mundo.</em>
-            </h1>
-            <p class="hero-description reveal" style="--delay: 100ms">
-              Ingeniería Comercial. Estrategia, innovación y emprendimiento para
-              transformar tu futuro.
+            <h1 id="hero-title">Ingeniería<br />Comercial</h1>
+            <p>
+              Construye una mirada estratégica para liderar organizaciones,
+              emprendimientos y oportunidades.
             </p>
-            <div class="hero-actions reveal" style="--delay: 180ms">
-              <a class="button" href="#comunidad">Únete a la comunidad</a>
-              <a class="text-link" href="#proposito"
-                >Conoce la carrera
+            <div class="hero-bottom">
+              <span class="outline-label">GESTIÓN<br />ESTRATÉGICA</span
+              ><span class="outline-label">MARKETING Y<br />EMPRENDIMIENTO</span
+              ><a class="button dark" href="#proposito"
+                >MÁS<br />INFORMACIÓN
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 12h15m-6-6 6 6-6 6" /></svg
+                  <path d="m9 5 7 7-7 7" /></svg
               ></a>
             </div>
+            <a class="hero-community" href="#comunidad"
+              >Únete a nuestra comunidad <span aria-hidden="true">↗</span></a
+            >
           </div>
-          <img
-            class="hero-art"
-            src="./assets/hero-sculpture.webp"
-            alt=""
-            width="1254"
-            height="1254"
-            fetchpriority="high"
-            decoding="async"
-          />
         </div>
-        <div class="disciplines">
-          <ul class="wrap discipline-list" aria-label="Áreas de formación">
-            <li>Gestión estratégica</li>
-            <li>Marketing</li>
-            <li>Emprendimiento</li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        class="purpose wrap"
-        id="proposito"
-        aria-labelledby="purpose-title"
-      >
-        <h2 id="purpose-title" class="reveal">
-          Un propósito<br />que nos <em>conecta.</em>
-        </h2>
-        <div class="purpose-grid">
-          <article class="purpose-item reveal" aria-labelledby="mission-title">
-            <span class="section-number" aria-hidden="true">01</span>
-            <h3 id="mission-title">Nuestra misión</h3>
-            <p>
-              Brindar una oferta académica que responda a formar profesionales
-              capaces de desarrollar la gestión estratégica y operativa en una
-              organización y el manejo de herramientas de marketing y ventas,
-              haciendo un buen uso de los recursos financieros, respondiendo a
-              necesidades del contexto, en el marco de la sostenibilidad, con un
-              enfoque de equidad de género e interculturalidad.
-            </p>
-          </article>
-          <article
-            class="purpose-item reveal"
-            style="--delay: 120ms"
-            aria-labelledby="vision-title"
-          >
-            <span class="section-number" aria-hidden="true">02</span>
-            <h3 id="vision-title">Nuestra visión</h3>
-            <p>
-              Ser una carrera reconocida en el ámbito nacional e internacional
-              por formar profesionales competentes en el manejo de herramientas
-              de gestión administrativa, diseño e implementación de estrategias
-              de marketing y manejo eficiente de los recursos financieros de las
-              organizaciones en el marco de la responsabilidad social, cultural,
-              económica, ambiental y el emprendimiento.
-            </p>
-          </article>
+        <div class="photo-grid" aria-label="Vida universitaria">
+          <figure class="photo-card reveal">
+            <img
+              src="./assets/original/2aa21890847d4ff780a9b4aa27282e8c.jpg"
+              alt="Estudiantes y docentes reunidos en una actividad académica"
+              width="800"
+              height="533"
+            />
+            <figcaption>
+              <span class="photo-number">01</span>
+              <h2>Aprende</h2>
+              <p>Conocimiento y experiencias que abren nuevas oportunidades.</p>
+            </figcaption>
+          </figure>
+          <figure class="photo-card reveal" style="--delay: 90ms">
+            <img
+              src="./assets/original/e9ad5662404ed4072ea5d91933e4dc7e.jpg"
+              alt="Comunidad universitaria participando en un encuentro estudiantil"
+              width="800"
+              height="533"
+            />
+            <figcaption>
+              <span class="photo-number">02</span>
+              <h2>Participa</h2>
+              <p>Encuentros, proyectos y vida universitaria.</p>
+            </figcaption>
+          </figure>
+          <figure class="photo-card reveal" style="--delay: 180ms">
+            <img
+              src="./assets/original/39939b3ca4c6292f2f68aa78bbf02be2.jpg"
+              alt="Grupo universitario en la inauguración de Tecno Kids"
+              width="800"
+              height="533"
+            />
+            <figcaption>
+              <span class="photo-number">03</span>
+              <h2>Conecta</h2>
+              <p>Personas e ideas para construir tu próximo paso.</p>
+            </figcaption>
+          </figure>
         </div>
       </section>
-
+      <section class="purpose" id="proposito" aria-labelledby="purpose-title">
+        <div class="wrap">
+          <h2 class="section-title reveal" id="purpose-title">
+            Un propósito que nos mueve.
+          </h2>
+          <div class="purpose-grid">
+            <article id="mision" class="purpose-card reveal">
+              <span class="section-label">NUESTRO PRESENTE</span>
+              <h3 id="mission-title">Nuestra misión</h3>
+              <p>
+                Brindar una oferta académica que responda a formar profesionales
+                capaces de desarrollar la gestión estratégica y operativa en una
+                organización y el manejo de herramientas de marketing y ventas,
+                haciendo un buen uso de los recursos financieros, respondiendo a
+                necesidades del contexto, en el marco de la sostenibilidad, con
+                un enfoque de equidad de género e interculturalidad.
+              </p>
+            </article>
+            <article
+              id="vision"
+              class="purpose-card reveal"
+              style="--delay: 120ms"
+            >
+              <span class="section-label">NUESTRO FUTURO</span>
+              <h3 id="vision-title">Nuestra visión</h3>
+              <p>
+                Ser una carrera reconocida en el ámbito nacional e internacional
+                por formar profesionales competentes en el manejo de
+                herramientas de gestión administrativa, diseño e implementación
+                de estrategias de marketing y manejo eficiente de los recursos
+                financieros de las organizaciones en el marco de la
+                responsabilidad social, cultural, económica, ambiental y el
+                emprendimiento.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="social-section" id="redes" aria-labelledby="social-title">
+        <div class="wrap">
+          <div class="social-heading reveal">
+            <div>
+              <span class="section-label">NUESTRA COMUNIDAD EN REDES</span>
+              <h2 id="social-title">También nos encuentras<br />en TikTok.</h2>
+            </div>
+            <a
+              class="tiktok-profile"
+              href="https://www.tiktok.com/@uap_1993"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver @uap_1993 en TikTok (nueva pestaña)"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 3v12a5 5 0 1 1-5-5M15 3c0 4 3 6 6 6" />
+              </svg>
+              @uap_1993 <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="social-grid">
+            <div class="video-intro reveal">
+              <h3>Da el primer paso hacia tu próxima oportunidad.</h3>
+              <p>
+                Conoce las experiencias, actividades y voces de la comunidad
+                universitaria.
+              </p>
+              <video
+                controls
+                playsinline
+                preload="none"
+                poster="./assets/original/860b94c04e73707416ee5a61c41fa9dc.jpg"
+                aria-label="Presentación de la carrera, video de la página original"
+              >
+                <source
+                  src="./assets/videos/presentacion.mp4"
+                  type="video/mp4"
+                />
+                Tu navegador no admite video.
+                <a href="./assets/videos/presentacion.mp4">Descargar video</a>
+              </video>
+              <p class="video-caption">Conoce la carrera</p>
+            </div>
+            <figure class="portrait-video reveal" style="--delay: 90ms">
+              <video
+                controls
+                playsinline
+                preload="none"
+                poster="./assets/original/c3cc0d0a8726506449d080d6c1fe5057.jpg"
+                aria-label="TikTok de la comunidad universitaria"
+              >
+                <source
+                  src="./assets/videos/tiktok-comunidad.mp4"
+                  type="video/mp4"
+                />
+                Tu navegador no admite video.
+                <a href="./assets/videos/tiktok-comunidad.mp4"
+                  >Descargar video</a
+                >
+              </video>
+              <figcaption>Historias de nuestra comunidad</figcaption>
+            </figure>
+            <figure class="portrait-video reveal" style="--delay: 180ms">
+              <video
+                controls
+                playsinline
+                preload="none"
+                poster="./assets/original/5575536bb42645926fba5aa208194bb4.jpg"
+                aria-label="TikTok sobre la vida universitaria"
+              >
+                <source
+                  src="./assets/videos/tiktok-carrera.mp4"
+                  type="video/mp4"
+                />
+                Tu navegador no admite video.
+                <a href="./assets/videos/tiktok-carrera.mp4">Descargar video</a>
+              </video>
+              <figcaption>Vive la experiencia universitaria</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
       <section
-        class="community"
+        class="community wrap"
         id="comunidad"
         aria-labelledby="community-title"
       >
-        <div class="wrap">
-          <div class="community-main reveal">
+        <div class="community-panel reveal">
+          <div class="community-copy">
+            <span class="section-label">SÉ PARTE DE LA COMUNIDAD</span>
             <h2 id="community-title">
-              Tu próximo capítulo<br />empieza en <em>comunidad.</em>
+              Aprende, participa y conecta con el mundo real.
             </h2>
-            <p class="community-copy">
-              Conecta con la comunidad de Ingeniería Comercial. Da el siguiente
-              paso y sé parte de la conversación.
+            <p>
+              El siguiente paso empieza con una conversación. Únete a nuestro
+              grupo y conecta con la comunidad universitaria.
             </p>
-            <!-- Enlace recuperado de la web original; confirmar si Comercial utiliza otro grupo. -->
             <a
-              class="button"
+              class="whatsapp-link"
               id="whatsapp-link"
               href="https://chat.whatsapp.com/F9hx5vGx705IKqGwBvBnte"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Unirme a WhatsApp (se abre en una nueva pestaña)"
-              >Unirme a WhatsApp
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 12h15m-6-6 6 6-6 6" /></svg
-            ></a>
-          </div>
-          <footer class="footer">
-            <a class="brand" href="#inicio" aria-label="Volver al inicio"
-              ><span class="brand-mark">ICOM</span
-              ><span class="brand-name">Ingeniería<br />Comercial</span></a
+              aria-label="Únete al grupo de WhatsApp (se abre en una nueva pestaña)"
+              ><img
+                src="./assets/original/fc8c7cb8c61351a06211fec9dbbb9d93.png"
+                alt=""
+                width="492"
+                height="491"
+              /><span>ÚNETE AL GRUPO DE<br />WHATSAPP</span></a
             >
-            <nav class="footer-nav" aria-label="Navegación del pie de página">
-              <a href="#inicio">La carrera</a
-              ><a href="#proposito">Nuestro propósito</a
-              ><a href="#comunidad">Comunidad</a>
-            </nav>
-          </footer>
+          </div>
+          <img
+            class="community-photo"
+            src="./assets/original/e9ad5662404ed4072ea5d91933e4dc7e.jpg"
+            alt="Encuentro de la comunidad universitaria"
+            width="800"
+            height="533"
+            loading="lazy"
+          />
         </div>
       </section>
     </main>
+    <footer class="wrap footer">
+      <a href="#inicio" class="footer-brand">Ingeniería Comercial</a>
+      <p>Aprende. Participa. Conecta.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </footer>
   </body>
 </html>

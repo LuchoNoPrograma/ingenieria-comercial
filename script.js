@@ -56,3 +56,24 @@ if (
     .forEach((element) => observer.observe(element));
   document.documentElement.classList.add("motion-ready");
 }
+
+// Keep only one video playing, and pause media once it leaves the screen.
+const videos = [...document.querySelectorAll("video")];
+videos.forEach((video) =>
+  video.addEventListener("play", () => {
+    videos.forEach((other) => {
+      if (other !== video) other.pause();
+    });
+  }),
+);
+if ("IntersectionObserver" in window) {
+  const mediaObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) entry.target.pause();
+      });
+    },
+    { threshold: 0.1 },
+  );
+  videos.forEach((video) => mediaObserver.observe(video));
+}

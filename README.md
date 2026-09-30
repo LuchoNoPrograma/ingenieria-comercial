@@ -1,38 +1,35 @@
-# Ingeniería Comercial · ICOM
+# Ingeniería Comercial · Comunidad universitaria
 
-Landing estática para GitHub Pages, sin dependencias de ejecución ni proceso de compilación.
+Landing estática publicada en https://luchonoprograma.github.io/ingenieria-comercial/.
 
-## Vista local
+## Contenido y diseño
+
+- Composición basada en la web original de Canva: fondos naranjas, paneles durazno redondeados, fotografías de actividades y tarjetas con texto superpuesto.
+- Misión y visión transcritas del folleto proporcionado por el solicitante.
+- Cuatro fotografías originales de Canva, descargadas y servidas localmente.
+- Botón de WhatsApp con el icono original verde y el tratamiento original naranja, blanco y subrayado.
+- Sección de TikTok con los tres videos extraídos de Canva: dos verticales y una presentación horizontal. Controles nativos, sin reproducción automática y carga bajo demanda. Al reproducir uno se pausan los demás.
+- Perfil de TikTok tomado de la marca de agua de los videos: `@uap_1993`.
+- Animaciones de aparición, desplazamiento suave, navegación móvil y soporte de movimiento reducido.
+
+## Fuentes
+
+Referencia: https://tarsier-9p5pj7.my.canva.site/.
+
+Los archivos descargados se conservan en `assets/original/` y `assets/videos/`. Sus nombres originales permiten rastrearlos en la página fuente. Las fotografías y videos pertenecen al contenido de Ingeniería Financiera de esa referencia y se reutilizan por indicación explícita del solicitante; la misión, visión y título provienen de su folleto de Ingeniería Comercial.
+
+WhatsApp conservado de la referencia: https://chat.whatsapp.com/F9hx5vGx705IKqGwBvBnte.
+
+Tipografía DM Sans: licencia SIL Open Font License incluida en `assets/fonts/`.
+
+## Edición y vista local
+
+Editar `index.html` para textos y enlaces; `styles.css` para apariencia; `script.js` para menú, animaciones y comportamiento de videos.
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Abrir http://localhost:4173.
+Abrir http://localhost:4173. No hay dependencias ni compilación.
 
-## Editar
-
-- `index.html`: contenido, misión, visión y metadatos sociales.
-- El enlace del grupo está en `#whatsapp-link`, en `index.html`; los otros botones llevan a esa sección.
-- `styles.css`: colores, tipografía, diseño adaptable y animaciones.
-- `script.js`: menú móvil y aparición progresiva al desplazarse.
-- `assets/`: recursos servidos localmente, incluidas las fuentes.
-
-## Fuentes de contenido
-
-- Misión y visión: folleto de Ingeniería Comercial enviado por el solicitante el 30 de septiembre de 2026. Se normalizaron mayúsculas y puntuación sin alterar el sentido.
-- Web de referencia: https://tarsier-9p5pj7.my.canva.site/ (Ingeniería Financiera).
-- WhatsApp recuperado de la web de referencia: https://chat.whatsapp.com/F9hx5vGx705IKqGwBvBnte. **Pendiente de confirmar si corresponde también a Ingeniería Comercial.**
-- No se trasladaron datos sobre duración, instalaciones, inscripciones o fotografías de Financiera a Comercial.
-- La ilustración abstracta se generó con Image Gen; no representa instalaciones universitarias reales. Prompt: escultura arquitectónica editorial con escalones azul marino y naranja, esfera de piedra y fondo marfil, sin texto.
-- Tipografías DM Sans y DM Serif Display, distribuidas bajo SIL Open Font License; licencias incluidas en `assets/fonts/`.
-
-## Publicación
-
-GitHub Pages sirve la raíz de la rama `main`. Cada push a esa rama actualiza el sitio. Las rutas relativas permiten alojarlo en un subdirectorio sin configuración adicional.
-
-Sitio previsto: https://luchonoprograma.github.io/ingenieria-comercial/
-
-## Accesibilidad
-
-HTML semántico, enlace para saltar al contenido, navegación por teclado, foco visible, menú con estado accesible y respeto de `prefers-reduced-motion`. El contenido permanece visible sin JavaScript.
+GitHub Pages publica la raíz de `main` en cada push.
