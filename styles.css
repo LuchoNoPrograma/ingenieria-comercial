@@ -256,7 +256,6 @@ em {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
   mask-image:
     linear-gradient(to right, transparent, #000 23%, #000 90%, transparent),
     linear-gradient(to bottom, transparent, #000 9%, #000 85%, transparent);
