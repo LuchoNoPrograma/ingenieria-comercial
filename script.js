@@ -16,7 +16,7 @@ if (introRoot.classList.contains("intro-pending")) {
   const fontsLoaded = document.fonts ? document.fonts.ready : Promise.resolve();
   Promise.race([
     Promise.all([pageLoaded, fontsLoaded]),
-    new Promise((resolve) => setTimeout(resolve, 2500)),
+    new Promise((resolve) => setTimeout(resolve, 900)),
   ]).then(() => {
     if (!introRoot.classList.contains("intro-pending")) return;
     requestAnimationFrame(() =>
@@ -25,7 +25,7 @@ if (introRoot.classList.contains("intro-pending")) {
           once: true,
         });
         introRoot.classList.add("intro-running");
-        setTimeout(finishIntro, 900);
+        setTimeout(finishIntro, 600);
       }),
     );
   });
@@ -112,3 +112,64 @@ if ("IntersectionObserver" in window) {
   );
   videos.forEach((video) => mediaObserver.observe(video));
 }
+
+// Replay the tap animation, with its click rays, when a register button is pressed.
+document.querySelectorAll(".cta-tap").forEach((tap) =>
+  tap.querySelector("a").addEventListener("click", () => {
+    tap.classList.remove("is-clicked");
+    void tap.offsetWidth;
+    tap.classList.add("is-clicked");
+    setTimeout(() => tap.classList.remove("is-clicked"), 700);
+  }),
+);
+
+// Open photos in a viewer at their natural proportions, with the card text.
+const lightbox = document.querySelector(".lightbox");
+const gallery = [...document.querySelectorAll("[data-lightbox]")];
+let current = 0;
+function showImage(index) {
+  current = (index + gallery.length) % gallery.length;
+  const item = gallery[current];
+  const image = item.tagName === "IMG" ? item : item.querySelector("img");
+  const caption = item.querySelector("figcaption");
+  lightbox.querySelector("img").src = image.currentSrc || image.src;
+  lightbox.querySelector("img").alt = image.alt;
+  lightbox.querySelector("h3").textContent =
+    caption?.querySelector("h2")?.textContent || item.dataset.title || "";
+  lightbox.querySelector("p").textContent =
+    caption?.querySelector("p")?.textContent || image.alt;
+}
+gallery.forEach((item, index) => {
+  const image = item.tagName === "IMG" ? item : item.querySelector("img");
+  item.tabIndex = 0;
+  item.setAttribute("role", "button");
+  item.setAttribute("aria-label", `Ampliar imagen: ${image.alt}`);
+  const open = () => {
+    showImage(index);
+    lightbox.showModal();
+  };
+  item.addEventListener("click", open);
+  item.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      open();
+    }
+  });
+});
+lightbox
+  .querySelector(".lightbox-close")
+  .addEventListener("click", () => lightbox.close());
+lightbox
+  .querySelector(".prev")
+  .addEventListener("click", () => showImage(current - 1));
+lightbox
+  .querySelector(".next")
+  .addEventListener("click", () => showImage(current + 1));
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) lightbox.close();
+});
+lightbox.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") showImage(current - 1);
+  if (event.key === "ArrowRight") showImage(current + 1);
+});
+lightbox.addEventListener("close", () => gallery[current].focus());

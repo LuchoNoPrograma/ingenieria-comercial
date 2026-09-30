@@ -43,31 +43,32 @@
         inset: 0;
         z-index: 2147483647;
         pointer-events: none;
-        background: rgba(251, 247, 240, 0.035);
-        -webkit-backdrop-filter: blur(16px);
-        backdrop-filter: blur(16px);
+        background: rgba(251, 247, 240, 0.12);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
       }
       .intro-running .page-intro {
-        animation: clear-page-intro 0.75s ease-out forwards;
+        animation: clear-page-intro 0.45s ease-out forwards;
       }
       @keyframes clear-page-intro {
         from {
-          -webkit-backdrop-filter: blur(16px);
-          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
         }
         to {
           -webkit-backdrop-filter: blur(0);
           backdrop-filter: blur(0);
+          background: transparent;
         }
       }
       @supports not (
         (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
       ) {
         .intro-pending body > :not(.page-intro) {
-          filter: blur(16px);
+          filter: blur(5px);
         }
         .intro-running body > :not(.page-intro) {
-          animation: clear-page-fallback 0.75s ease-out forwards;
+          animation: clear-page-fallback 0.45s ease-out forwards;
         }
         @keyframes clear-page-fallback {
           to {
@@ -95,12 +96,12 @@
               "intro-pending",
               "intro-running",
             ),
-          6000,
+          2500,
         );
       }
     </script>
-    <link rel="stylesheet" href="./styles.css?v=watermark-5" />
-    <script src="./script.js?v=global-intro-2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=viewer-9" />
+    <script src="./script.js?v=viewer-5" defer></script>
   </head>
   <body>
     <div class="page-intro" aria-hidden="true"></div>
@@ -131,10 +132,10 @@
         </button>
         <nav class="nav" id="navigation" aria-label="Navegación principal">
           <a class="nav-link active" href="#inicio">Información</a
-          ><a class="nav-link" href="#mision">Misión</a
-          ><a class="nav-link" href="#vision">Visión</a
-          ><a class="nav-link" href="#redes">TikTok</a>
-          <a class="nav-link" href="#comunidad">Comunidad</a
+          ><a class="nav-link" href="#proposito">Misión y visión</a
+          ><a class="nav-link" href="#espacios">Espacios</a
+          ><a class="nav-link" href="#campo-laboral">Campo laboral</a
+          ><a class="nav-link" href="#comunidad">Comunidad</a
           ><a
             class="nav-register"
             href="https://docs.google.com/forms/d/e/1FAIpQLSegwPkQdk_NOd2UY4hYiYqEGfEUKDCSN6kjCM4j_LUHW75xRg/viewform"
@@ -146,91 +147,112 @@
       </div>
     </header>
     <main id="contenido">
-      <section id="inicio" class="intro wrap" aria-labelledby="hero-title">
-        <div class="hero-panel">
-          <img
-            class="hero-photo"
-            src="./assets/original/dea74f15db06b801256592c44997a445.jpg"
-            alt="Encuentro de estudiantes de la Universidad Amazónica de Pando"
-            width="1600"
-            height="1066"
-            fetchpriority="high"
-          />
-          <div class="hero-copy">
-            <h1 id="hero-title">
-              Ingeniería<br /><span class="title-accent">Comercial</span>
-            </h1>
-            <p>
-              Construye una mirada estratégica para liderar organizaciones,
-              emprendimientos y oportunidades.
-            </p>
-            <dl class="career-facts" aria-label="Información de la carrera">
-              <div>
-                <dt>Área</dt>
-                <dd>Ciencias y<br />Tecnología</dd>
+      <section id="inicio" class="intro" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div class="hero-panel">
+            <img
+              data-lightbox
+              data-title="Encuentro estudiantil"
+              class="hero-photo"
+              src="./assets/original/dea74f15db06b801256592c44997a445.jpg"
+              alt="Encuentro de estudiantes de la Universidad Amazónica de Pando"
+              width="1600"
+              height="1066"
+              fetchpriority="high"
+            />
+            <div class="hero-copy">
+              <div class="hero-title-row">
+                <h1 id="hero-title">
+                  Ingeniería<br /><span class="title-accent">Comercial</span>
+                </h1>
+                <img
+                  class="hero-logo"
+                  src="./assets/logo-transparent.png"
+                  alt=""
+                  width="512"
+                  height="512"
+                />
               </div>
-              <div>
-                <dt>Modalidad</dt>
-                <dd>Presencial</dd>
+              <p>
+                Construye una mirada estratégica para liderar organizaciones,
+                emprendimientos y oportunidades.
+              </p>
+              <dl class="career-facts" aria-label="Información de la carrera">
+                <div>
+                  <dt>Área</dt>
+                  <dd>Ciencias y<br />Tecnología</dd>
+                </div>
+                <div>
+                  <dt>Modalidad</dt>
+                  <dd>Presencial</dd>
+                </div>
+                <div>
+                  <dt>Duración</dt>
+                  <dd>5 años /<br />10 semestres</dd>
+                </div>
+              </dl>
+              <div class="hero-actions">
+                <span class="cta-tap"
+                  ><a
+                    class="button register-button"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSegwPkQdk_NOd2UY4hYiYqEGfEUKDCSN6kjCM4j_LUHW75xRg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Regístrate <span aria-hidden="true">↗</span></a
+                  ><span class="tap-hand" aria-hidden="true"
+                ><span class="tap-rays"><i></i><i></i><i></i></span
+                ><img
+                  src="./assets/illustrations/hand.png"
+                  alt=""
+                  width="240"
+                  height="228" /></span
+            ></span><a class="text-link" href="#presentacion"
+                  >Más información <span aria-hidden="true">↓</span></a
+                >
               </div>
-              <div>
-                <dt>Duración</dt>
-                <dd>5 años /<br />10 semestres</dd>
-              </div>
-            </dl>
-            <div class="hero-actions">
-              <a
-                class="button register-button"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSegwPkQdk_NOd2UY4hYiYqEGfEUKDCSN6kjCM4j_LUHW75xRg/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Regístrate <span aria-hidden="true">↗</span></a
-              ><a class="text-link" href="#presentacion"
-                >Conoce la carrera <span aria-hidden="true">↓</span></a
-              >
             </div>
           </div>
-        </div>
-        <div class="photo-grid" aria-label="Vida universitaria">
-          <figure class="photo-card reveal">
-            <img
-              src="./assets/original/2aa21890847d4ff780a9b4aa27282e8c.jpg"
-              alt="Estudiantes y docentes reunidos en una actividad académica"
-              width="800"
-              height="533"
-            />
-            <figcaption>
-              <span class="photo-number">01</span>
-              <h2>Aprende</h2>
-              <p>Conocimiento y experiencias que abren nuevas oportunidades.</p>
-            </figcaption>
-          </figure>
-          <figure class="photo-card reveal" style="--delay: 90ms">
-            <img
-              src="./assets/original/e9ad5662404ed4072ea5d91933e4dc7e.jpg"
-              alt="Comunidad universitaria participando en un encuentro estudiantil"
-              width="800"
-              height="533"
-            />
-            <figcaption>
-              <span class="photo-number">02</span>
-              <h2>Participa</h2>
-              <p>Encuentros, proyectos y vida universitaria.</p>
-            </figcaption>
-          </figure>
-          <figure class="photo-card reveal" style="--delay: 180ms">
-            <img
-              src="./assets/original/39939b3ca4c6292f2f68aa78bbf02be2.jpg"
-              alt="Grupo universitario en la inauguración de Tecno Kids"
-              width="800"
-              height="533"
-            />
-            <figcaption>
-              <span class="photo-number">03</span>
-              <h2>Conecta</h2>
-              <p>Personas e ideas para construir tu próximo paso.</p>
-            </figcaption>
-          </figure>
+          <div class="photo-grid" aria-label="Ejes de formación">
+            <figure data-lightbox class="photo-card reveal from-left">
+              <img
+                src="./assets/original/2aa21890847d4ff780a9b4aa27282e8c.jpg"
+                alt="Estudiantes y docentes reunidos en una actividad académica"
+                width="800"
+                height="533"
+              />
+              <figcaption>
+                <span class="photo-number">01</span>
+                <h2>Análisis financiero</h2>
+                <p>Estados, indicadores y escenarios para apoyar decisiones estratégicas.</p>
+              </figcaption>
+            </figure>
+            <figure data-lightbox class="photo-card reveal" style="--delay: 90ms">
+              <img
+                src="./assets/original/e9ad5662404ed4072ea5d91933e4dc7e.jpg"
+                alt="Comunidad universitaria participando en un encuentro estudiantil"
+                width="800"
+                height="533"
+              />
+              <figcaption>
+                <span class="photo-number">02</span>
+                <h2>Inversiones y mercados</h2>
+                <p>Carteras, riesgo, financiamiento y productos financieros.</p>
+              </figcaption>
+            </figure>
+            <figure data-lightbox class="photo-card reveal from-right" style="--delay: 180ms">
+              <img
+                src="./assets/original/39939b3ca4c6292f2f68aa78bbf02be2.jpg"
+                alt="Grupo universitario en la inauguración de Tecno Kids"
+                width="800"
+                height="533"
+              />
+              <figcaption>
+                <span class="photo-number">03</span>
+                <h2>Tecnología y datos</h2>
+                <p>Sistemas de información y herramientas para optimizar la gestión.</p>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
       <section
@@ -243,15 +265,15 @@
             Da el primer paso hacia tu próxima oportunidad.
           </h2>
           <div class="presentation-layout">
-            <div class="presentation-identity reveal">
+            <div class="presentation-identity reveal from-left">
               <img
                 src="./assets/logo-transparent.png"
                 alt="Ingeniería Financiera"
                 width="512"
                 height="512"
-              /><span>Aprende.<br />Participa.<br />Conecta.</span>
+              />
             </div>
-            <div class="presentation-player reveal">
+            <div class="presentation-player reveal from-right">
               <video
                 controls
                 playsinline
@@ -276,7 +298,7 @@
             Un propósito que <span class="title-accent">nos mueve.</span>
           </h2>
           <div class="purpose-grid">
-            <article id="mision" class="purpose-card reveal">
+            <article id="mision" class="purpose-card reveal from-left">
               <span class="section-label">NUESTRO PRESENTE</span>
               <h3 id="mission-title">Nuestra misión</h3>
               <p>
@@ -290,7 +312,7 @@
             </article>
             <article
               id="vision"
-              class="purpose-card reveal"
+              class="purpose-card reveal from-right"
               style="--delay: 120ms"
             >
               <span class="section-label">NUESTRO FUTURO</span>
@@ -308,62 +330,109 @@
           </div>
         </div>
       </section>
-      <section class="social-section" id="redes" aria-labelledby="social-title">
+      <section class="spaces" id="espacios" aria-labelledby="spaces-title">
         <div class="wrap">
-          <div class="social-heading reveal">
-            <div>
-              <span class="section-label">NUESTRA COMUNIDAD EN REDES</span>
-              <h2 id="social-title">También nos encuentras<br />en TikTok.</h2>
-            </div>
-            <a
-              class="tiktok-profile"
-              href="https://www.tiktok.com/@uap_1993"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ver @uap_1993 en TikTok (nueva pestaña)"
-              ><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M15 3v12a5 5 0 1 1-5-5M15 3c0 4 3 6 6 6" />
-              </svg>
-              @uap_1993 <span aria-hidden="true">↗</span></a
-            >
+          <div class="spaces-heading reveal from-left">
+            <span class="section-label">INFRAESTRUCTURA</span>
+            <h2 class="section-title" id="spaces-title">
+              Espacios para aprender
+              <span class="title-accent">y practicar.</span>
+            </h2>
+            <p>
+              Gabinetes, computación y aulas para planificar, analizar y
+              presentar decisiones empresariales.
+            </p>
           </div>
-          <div class="social-grid">
-            <figure class="portrait-video reveal" style="--delay: 90ms">
-              <video
-                controls
-                playsinline
-                preload="none"
-                poster="./assets/original/c3cc0d0a8726506449d080d6c1fe5057.jpg"
-                aria-label="TikTok de la comunidad universitaria"
-              >
-                <source
-                  src="./assets/videos/tiktok-comunidad.mp4"
-                  type="video/mp4"
-                />
-                Tu navegador no admite video.
-                <a href="./assets/videos/tiktok-comunidad.mp4"
-                  >Descargar video</a
-                >
-              </video>
-              <figcaption>Historias de nuestra comunidad</figcaption>
-            </figure>
-            <figure class="portrait-video reveal" style="--delay: 180ms">
-              <video
-                controls
-                playsinline
-                preload="none"
-                poster="./assets/original/5575536bb42645926fba5aa208194bb4.jpg"
-                aria-label="TikTok sobre la vida universitaria"
-              >
-                <source
-                  src="./assets/videos/tiktok-carrera.mp4"
-                  type="video/mp4"
-                />
-                Tu navegador no admite video.
-                <a href="./assets/videos/tiktok-carrera.mp4">Descargar video</a>
-              </video>
-              <figcaption>Vive la experiencia universitaria</figcaption>
-            </figure>
+          <ol class="spaces-grid">
+            <li class="space-card reveal">
+              <span class="space-icon"
+                ><img
+                  src="./assets/illustrations/laptop.svg"
+                  alt=""
+                  width="79"
+                  height="57"
+              /></span>
+              <span class="photo-number">01</span>
+              <h3>Gabinete de Computación</h3>
+              <p>Herramientas para gestión, datos y marketing digital.</p>
+            </li>
+            <li class="space-card reveal" style="--delay: 80ms">
+              <span class="space-icon"
+                ><img
+                  src="./assets/illustrations/books.png"
+                  alt=""
+                  width="320"
+                  height="320"
+              /></span>
+              <span class="photo-number">02</span>
+              <h3>Biblioteca Central</h3>
+              <p>Administración, economía y mercados para consulta.</p>
+            </li>
+            <li class="space-card reveal" style="--delay: 160ms">
+              <span class="space-icon"
+                ><img
+                  src="./assets/illustrations/chart.png"
+                  alt=""
+                  width="301"
+                  height="320"
+              /></span>
+              <span class="photo-number">03</span>
+              <h3>Aulas de simulación</h3>
+              <p>Análisis, presentaciones y decisiones empresariales.</p>
+            </li>
+            <li class="space-card reveal" style="--delay: 240ms">
+              <span class="space-icon"
+                ><img
+                  src="./assets/illustrations/../logo-transparent.png"
+                  alt=""
+                  width="512"
+                  height="512"
+              /></span>
+              <span class="photo-number">04</span>
+              <h3>Auditorios</h3>
+              <p>Conferencias, talleres y encuentros empresariales.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section
+        class="careers"
+        id="campo-laboral"
+        aria-labelledby="careers-title"
+      >
+        <div class="wrap careers-layout">
+          <figure class="portrait-video reveal from-left">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="./assets/original/c3cc0d0a8726506449d080d6c1fe5057.jpg"
+              aria-label="TikTok de la comunidad universitaria"
+            >
+              <source
+                src="./assets/videos/tiktok-comunidad.mp4"
+                type="video/mp4"
+              />
+              Tu navegador no admite video.
+              <a href="./assets/videos/tiktok-comunidad.mp4">Descargar video</a>
+            </video>
+          </figure>
+          <div class="careers-copy reveal from-right">
+            <span class="section-label">CAMPO LABORAL</span>
+            <h2 class="section-title" id="careers-title">
+              Abre caminos
+              <span class="title-accent">profesionales.</span>
+            </h2>
+            <ul class="careers-list">
+              <li>Bancos y entidades financieras</li>
+              <li>Consultoras y auditoría</li>
+              <li>Empresas privadas</li>
+              <li>Comercio, marketing y ventas</li>
+              <li>Ministerios y sector público</li>
+              <li>Consultoría independiente</li>
+              <li>Organismos multilaterales y ONG</li>
+              <li>Universidades e investigación</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -372,7 +441,7 @@
         id="registro"
         aria-labelledby="registration-title"
       >
-        <div class="registration-panel reveal">
+        <div class="registration-panel reveal from-left">
           <div>
             <span class="section-label">DA EL SIGUIENTE PASO</span>
             <h2 id="registration-title">
@@ -382,54 +451,91 @@
             </h2>
             <p>Completa el formulario de registro para dar el primer paso.</p>
           </div>
-          <a
-            class="button register-button"
-            id="register-link"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSegwPkQdk_NOd2UY4hYiYqEGfEUKDCSN6kjCM4j_LUHW75xRg/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Regístrate <span aria-hidden="true">↗</span></a
-          >
+          <div class="registration-action">
+            <span class="cta-tap"
+              ><a
+                class="button register-button"
+                id="register-link"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSegwPkQdk_NOd2UY4hYiYqEGfEUKDCSN6kjCM4j_LUHW75xRg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Regístrate <span aria-hidden="true">↗</span></a
+              ><span class="tap-hand" aria-hidden="true"
+                ><span class="tap-rays"><i></i><i></i><i></i></span
+                ><img
+                  src="./assets/illustrations/hand.png"
+                  alt=""
+                  width="240"
+                  height="228" /></span
+            ></span>
+          </div>
         </div>
       </section>
       <section
-        class="community wrap"
+        class="community"
         id="comunidad"
         aria-labelledby="community-title"
       >
-        <div class="community-panel reveal">
-          <div class="community-copy">
+        <div class="wrap community-layout">
+          <div class="community-panel reveal from-left">
             <span class="section-label">SÉ PARTE DE LA COMUNIDAD</span>
             <h2 id="community-title">
               Aprende, participa y conecta con el mundo real.
             </h2>
             <p>
-              El siguiente paso empieza con una conversación. Únete a nuestro
-              grupo y conecta con la comunidad universitaria.
+              Pasantías, proyectos, simulaciones, ferias, congresos, talleres,
+              emprendimientos y actividades universitarias.
             </p>
+            <span class="cta-tap whatsapp-tap"
+              ><a
+                class="whatsapp-link"
+                id="whatsapp-link"
+                href="https://chat.whatsapp.com/F9hx5vGx705IKqGwBvBnte"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Únete al grupo de WhatsApp (se abre en una nueva pestaña)"
+                ><img
+                  src="./assets/original/fc8c7cb8c61351a06211fec9dbbb9d93.png"
+                  alt=""
+                  width="492"
+                  height="491"
+                /><span>ÚNETE AL GRUPO DE<br />WHATSAPP</span></a
+              ><span class="tap-hand" aria-hidden="true"
+                ><span class="tap-rays"><i></i><i></i><i></i></span
+                ><img
+                  src="./assets/illustrations/hand.png"
+                  alt=""
+                  width="240"
+                  height="228" /></span
+            ></span>
             <a
-              class="whatsapp-link"
-              id="whatsapp-link"
-              href="https://chat.whatsapp.com/F9hx5vGx705IKqGwBvBnte"
+              class="tiktok-profile"
+              href="https://www.tiktok.com/@uap_1993"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Únete al grupo de WhatsApp (se abre en una nueva pestaña)"
-              ><img
-                src="./assets/original/fc8c7cb8c61351a06211fec9dbbb9d93.png"
-                alt=""
-                width="492"
-                height="491"
-              /><span>ÚNETE AL GRUPO DE<br />WHATSAPP</span></a
+              aria-label="Ver @uap_1993 en TikTok (nueva pestaña)"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 3v12a5 5 0 1 1-5-5M15 3c0 4 3 6 6 6" />
+              </svg>
+              También en TikTok: @uap_1993 <span aria-hidden="true">↗</span></a
             >
           </div>
-          <img
-            class="community-photo"
-            src="./assets/original/e9ad5662404ed4072ea5d91933e4dc7e.jpg"
-            alt="Encuentro de la comunidad universitaria"
-            width="800"
-            height="533"
-            loading="lazy"
-          />
+          <figure class="portrait-video reveal from-right" style="--delay: 90ms">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="./assets/original/5575536bb42645926fba5aa208194bb4.jpg"
+              aria-label="TikTok sobre la vida universitaria"
+            >
+              <source
+                src="./assets/videos/tiktok-carrera.mp4"
+                type="video/mp4"
+              />
+              Tu navegador no admite video.
+              <a href="./assets/videos/tiktok-carrera.mp4">Descargar video</a>
+            </video>
+          </figure>
         </div>
       </section>
     </main>
@@ -442,8 +548,23 @@
           height="512"
         /><span>Ingeniería Comercial</span></a
       >
-      <p>Aprende. Participa. Conecta.</p>
+      <p>Universidad Amazónica de Pando</p>
       <a href="#inicio">Volver arriba ↑</a>
     </footer>
+    <dialog class="lightbox" aria-label="Visor de imágenes">
+      <figure>
+        <img alt="" />
+        <figcaption><h3></h3><p></p></figcaption>
+      </figure>
+      <button class="lightbox-close" type="button" aria-label="Cerrar visor">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+      </button>
+      <button class="lightbox-nav prev" type="button" aria-label="Imagen anterior">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <button class="lightbox-nav next" type="button" aria-label="Imagen siguiente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </dialog>
   </body>
 </html>

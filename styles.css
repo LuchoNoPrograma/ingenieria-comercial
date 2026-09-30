@@ -297,9 +297,11 @@ h1 {
   font-size: 12px;
   background: #49362655;
 }
+
 .photo-card h2 {
-  font-size: 29px;
-  letter-spacing: -0.04em;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
   font-weight: 600;
   margin-bottom: 7px;
 }
@@ -319,13 +321,7 @@ h1 {
   font-weight: 600;
   margin-bottom: 40px;
 }
-.presentation .section-title {
-  color: #fff;
-  text-align: center;
-  max-width: 850px;
-  margin-inline: auto;
-  text-shadow: 0 2px 0 #49362630;
-}
+
 .presentation-layout {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
@@ -341,13 +337,6 @@ h1 {
 .presentation-identity img {
   width: 156px;
   height: auto;
-}
-.presentation-identity span {
-  color: #fff;
-  font-size: 22px;
-  line-height: 1.3;
-  font-weight: 700;
-  text-align: center;
 }
 .presentation-player video {
   display: block;
@@ -399,46 +388,6 @@ h1 {
   color: var(--muted);
   text-wrap: pretty;
 }
-.social-section {
-  background: var(--sand);
-  padding-block: 78px 72px;
-}
-.social-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 44px;
-}
-.social-heading h2 {
-  font-size: clamp(32px, 3.5vw, 48px);
-  line-height: 1.09;
-  letter-spacing: -0.045em;
-}
-.tiktok-profile {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: #26211e;
-  color: white;
-  padding: 16px 21px;
-  border-radius: 13px;
-  font-size: 15px;
-  flex: none;
-  transition: transform 0.2s;
-}
-.tiktok-profile:hover {
-  transform: translateY(-3px);
-}
-.tiktok-profile svg {
-  stroke-width: 2.4;
-}
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 330px));
-  justify-content: center;
-  gap: 52px;
-}
 .portrait-video video {
   display: block;
   width: 100%;
@@ -448,13 +397,7 @@ h1 {
   border: 2px solid var(--ink);
   border-radius: 25px;
 }
-.portrait-video figcaption {
-  font-size: 14px;
-  line-height: 1.4;
-  padding: 16px 3px;
-  font-weight: 500;
-  color: var(--muted);
-}
+
 .registration {
   padding-top: 88px;
 }
@@ -484,46 +427,11 @@ h1 {
   min-width: 190px;
   min-height: 60px;
 }
-.community {
-  padding-block: 72px 88px;
-}
-.community-panel {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  background: #fffdf9;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-.community-copy {
-  padding: 44px;
-}
-.community h2 {
-  font-size: clamp(30px, 3vw, 42px);
-  letter-spacing: -0.04em;
-  line-height: 1.15;
-  max-width: 570px;
-}
-.community-copy > p {
-  font-size: 17px;
-  line-height: 1.75;
-  margin-top: 23px;
-  max-width: 490px;
-  color: var(--muted);
-}
-.community-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 46% center;
-}
 .whatsapp-link {
   display: flex;
   align-items: center;
   gap: 18px;
   width: 100%;
-  max-width: 460px;
-  margin-top: 32px;
   transition: transform 0.25s;
 }
 .whatsapp-link > img {
@@ -639,17 +547,15 @@ h1 {
     grid-template-columns: 120px minmax(0, 1fr);
     gap: 24px;
   }
-  .presentation-identity span {
-    font-size: 20px;
-  }
   .purpose-card {
     padding: 30px;
   }
-  .community-copy {
-    padding: 33px;
-  }
+
   .whatsapp-link {
     gap: 13px;
+  }
+  .whatsapp-tap {
+    --icon-offset: 60px;
   }
   .whatsapp-link > span {
     font-size: 16px;
@@ -773,9 +679,7 @@ h1 {
   .photo-card figcaption {
     inset: 20px;
   }
-  .photo-card h2 {
-    font-size: 29px;
-  }
+
   .photo-card p {
     font-size: 14px;
     max-width: 290px;
@@ -783,11 +687,7 @@ h1 {
   .presentation {
     padding-block: 43px 46px;
   }
-  .presentation .section-title {
-    font-size: 32px;
-    max-width: 400px;
-    margin-bottom: 28px;
-  }
+
   .presentation-layout {
     grid-template-columns: 1fr;
     gap: 25px;
@@ -799,10 +699,6 @@ h1 {
   }
   .presentation-identity img {
     width: 85px;
-  }
-  .presentation-identity span {
-    text-align: left;
-    font-size: 20px;
   }
   .presentation-player video {
     border-radius: 20px;
@@ -831,33 +727,10 @@ h1 {
     font-size: 16px;
     line-height: 1.85;
   }
-  .social-section {
-    padding-block: 49px 42px;
-  }
-  .social-heading {
-    display: block;
-    margin-bottom: 32px;
-  }
-  .social-heading h2 {
-    font-size: 35px;
-  }
-  .tiktok-profile {
-    margin-top: 24px;
-    padding: 14px 18px;
-    font-size: 14px;
-  }
-  .social-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
   .portrait-video video {
     border-radius: 19px;
   }
-  .portrait-video figcaption {
-    font-size: 12px;
-    line-height: 1.5;
-    padding: 12px 2px;
-  }
+
   .registration {
     padding-top: 52px;
   }
@@ -872,33 +745,19 @@ h1 {
   .registration p {
     font-size: 16px;
   }
-  .registration .button {
+  .registration-action {
     margin-top: 26px;
+  }
+  .registration .button {
     min-width: 180px;
     min-height: 54px;
   }
-  .community {
-    padding-block: 44px 52px;
-  }
-  .community-panel {
-    grid-template-columns: 1fr;
-    border-radius: 23px;
-  }
-  .community-copy {
-    padding: 31px 25px;
-  }
-  .community h2 {
-    font-size: 32px;
-  }
-  .community-copy > p {
-    font-size: 16px;
-  }
-  .community-photo {
-    height: 240px;
-  }
   .whatsapp-link {
     gap: 12px;
+  }
+  .whatsapp-tap {
     margin-top: 27px;
+    --icon-offset: 55px;
   }
   .whatsapp-link > img {
     width: 43px;
@@ -918,16 +777,9 @@ h1 {
   }
 }
 @media (max-width: 520px) {
-  .social-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
   .portrait-video {
     width: min(100%, 330px);
     margin-inline: auto;
-  }
-  .portrait-video figcaption {
-    font-size: 13px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1059,60 +911,625 @@ h1 .title-accent {
     margin-top: 25px;
   }
 }
-/* Quiet brand watermark, behind the page content and below the full-screen intro. */
-body {
+
+/* Sections recovered from the Canva reference, in the page's clean style. */
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+}
+.hero-logo {
+  width: clamp(88px, 10vw, 132px);
+  height: auto;
+  flex: none;
+}
+/* Pointing hand that taps the register button, with click rays and a pulse ring. */
+.cta-tap {
+  position: relative;
+  display: inline-flex;
   isolation: isolate;
 }
-body::before {
+.cta-tap::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
+  border-radius: 13px;
+  border: 2px solid var(--action);
+  opacity: 0;
   pointer-events: none;
-  background-image: url("./assets/logo-transparent.png");
-  background-repeat: no-repeat;
-  background-position: calc(100% + 150px) 18vh;
-  background-size: min(78vw, 900px);
-  opacity: 0.05;
+  animation: tap-ring 2.8s ease-out infinite;
+}
+.tap-hand {
+  position: absolute;
+  right: -30px;
+  bottom: -34px;
+  width: 50px;
+  pointer-events: none;
+  animation: tap-hand 2.8s cubic-bezier(0.3, 0.7, 0.3, 1) infinite;
+  filter: drop-shadow(0 3px 4px #3e302533);
+}
+.tap-hand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.tap-rays {
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  animation: tap-rays 2.8s ease-out infinite;
+}
+.tap-rays i {
+  position: absolute;
+  left: -1.5px;
+  top: -1.5px;
+  width: 3px;
+  height: 11px;
+  border-radius: 3px;
+  background: var(--ink);
+  box-shadow: 0 0 0 1.5px #fff;
+  transform-origin: 50% 100%;
+}
+.tap-rays i:nth-child(1) {
+  transform: rotate(-80deg) translateY(-19px);
+}
+.tap-rays i:nth-child(2) {
+  transform: rotate(-35deg) translateY(-19px);
+}
+.tap-rays i:nth-child(3) {
+  transform: rotate(10deg) translateY(-19px);
+}
+@keyframes tap-hand {
+  0%,
+  48%,
+  100% {
+    transform: translate(7px, 7px) rotate(4deg);
+  }
+  58% {
+    transform: translate(0, 0) scale(0.9);
+  }
+  68% {
+    transform: translate(3px, 3px);
+  }
+}
+@keyframes tap-rays {
+  0%,
+  56% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  62% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+@keyframes tap-ring {
+  0%,
+  56% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.6;
+  }
+  90%,
+  100% {
+    opacity: 0;
+    transform: scale(1.14, 1.35);
+  }
+}
+/* A real click replays the tap once, a little stronger. */
+.cta-tap.is-clicked::after {
+  animation: tap-ring-click 0.65s ease-out;
+}
+.cta-tap.is-clicked .tap-rays {
+  animation: tap-rays-click 0.65s ease-out;
+}
+.cta-tap.is-clicked .tap-hand {
+  animation: tap-hand-click 0.65s cubic-bezier(0.3, 0.7, 0.3, 1);
+}
+@keyframes tap-ring-click {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2, 1.55);
+  }
+}
+@keyframes tap-rays-click {
+  0% {
+    opacity: 1;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+@keyframes tap-hand-click {
+  0% {
+    transform: scale(0.86);
+  }
+  100% {
+    transform: translate(7px, 7px) rotate(4deg);
+  }
+}
+.hero-actions {
+  gap: 48px;
+}
+.presentation .section-title {
+  color: #fff;
+  text-align: center;
+  max-width: 850px;
+  margin-inline: auto;
+  text-shadow: 0 2px 0 #49362630;
+}
+.spaces {
+  background: var(--sand);
+  padding-block: 88px;
+}
+.spaces-heading {
+  max-width: 860px;
+  margin-bottom: 40px;
+}
+.spaces-heading .section-title {
+  margin-bottom: 18px;
+}
+.spaces-heading p {
+  max-width: 620px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.spaces-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.space-card {
+  position: relative;
+  background: #fffdf9;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 26px 24px 28px;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.space-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px #49362612;
+}
+.space-icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: var(--peach);
+  margin-bottom: 22px;
+}
+.space-icon img {
+  width: 42px;
+  height: 38px;
+  object-fit: contain;
+}
+.space-card .photo-number {
+  top: 24px;
+  left: auto;
+  right: 22px;
+  border-color: var(--line);
+  background: transparent;
+  color: var(--muted);
+}
+.space-card h3 {
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+.space-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.careers {
+  padding-block: 88px;
+}
+.careers-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  align-items: center;
+  gap: 64px;
+}
+.careers-copy .section-title {
+  margin-bottom: 30px;
+}
+.careers-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+}
+.careers-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.careers-list li::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex: none;
+}
+.portrait-video video {
+  border: 2px solid var(--ink);
+}
+.registration {
+  padding-top: 0;
+}
+.registration-action {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.community {
+  padding-block: 72px 88px;
+}
+.community-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  align-items: center;
+  gap: 48px;
+}
+.community-panel {
+  background: #fffdf9;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 44px;
+}
+.community h2 {
+  font-size: clamp(30px, 3vw, 42px);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  max-width: 570px;
+}
+.community-panel > p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 20px;
+  max-width: 520px;
+  color: var(--muted);
+}
+.tiktok-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid #9d8368;
+  padding-block: 6px;
+}
+.tiktok-profile svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.4;
+}
+/* Gentle sideways entrance while scrolling. */
+html,
+body {
+  overflow-x: clip;
+}
+.motion-ready .reveal.from-left:not(.is-visible) {
+  transform: translateX(-32px);
+}
+.motion-ready .reveal.from-right:not(.is-visible) {
+  transform: translateX(32px);
+}
+@media (max-width: 1050px) {
+  .spaces-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .careers-layout,
+  .community-layout {
+    gap: 32px;
+  }
+  .careers-layout {
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  }
+  .community-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
+  }
+  .careers-list {
+    grid-template-columns: 1fr;
+  }
+  .careers-list li {
+    font-size: 16px;
+    padding-block: 13px;
+  }
+  .community-panel {
+    padding: 33px;
+  }
 }
 @media (max-width: 720px) {
-  body::before {
-    background-size: 115vw;
-    background-position: calc(100% + 105px) 28vh;
-    opacity: 0.05;
+  .hero-logo {
+    width: 76px;
+  }
+  .tap-hand {
+    width: 44px;
+    right: -26px;
+    bottom: -30px;
+  }
+  .hero-actions {
+    gap: 40px;
+  }
+  .presentation .section-title {
+    font-size: 32px;
+    max-width: 400px;
+    margin-bottom: 28px;
+  }
+  .spaces,
+  .careers {
+    padding-block: 52px;
+  }
+  .spaces-heading {
+    margin-bottom: 28px;
+  }
+  .spaces-heading p {
+    font-size: 16px;
+  }
+  .spaces-grid {
+    gap: 14px;
+  }
+  .space-card {
+    padding: 20px 18px 22px;
+    border-radius: 20px;
+  }
+  .space-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+  .space-icon img {
+    width: 34px;
+    height: 30px;
+  }
+  .space-card .photo-number {
+    top: 18px;
+    right: 16px;
+  }
+  .space-card h3 {
+    font-size: 18px;
+  }
+  .space-card p {
+    font-size: 14px;
+  }
+  .careers-layout,
+  .community-layout {
+    grid-template-columns: 1fr;
+  }
+  .careers-layout .portrait-video {
+    order: 2;
+  }
+  .portrait-video {
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+  .community {
+    padding-block: 44px 52px;
+  }
+  .community-panel {
+    padding: 31px 25px;
+    border-radius: 23px;
+  }
+  .community h2 {
+    font-size: 32px;
+  }
+  .community-panel > p {
+    font-size: 16px;
+  }
+  .motion-ready .reveal.from-left:not(.is-visible) {
+    transform: translateX(-18px);
+  }
+  .motion-ready .reveal.from-right:not(.is-visible) {
+    transform: translateX(18px);
+  }
+}
+@media (max-width: 460px) {
+  .spaces-grid {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Opaque section backgrounds need their own watermark layer. */
-.presentation,
-.purpose,
-.social-section {
+/* One static watermark only, on the light purpose section. */
+.purpose {
   position: relative;
   isolation: isolate;
   overflow: hidden;
 }
-.presentation::before,
-.purpose::before,
-.social-section::before {
+.purpose::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url("./assets/logo-transparent.png");
-  background-repeat: no-repeat;
-  background-position: calc(100% + 150px) center;
-  background-size: min(78vw, 900px);
+  background: url("./assets/logo-transparent.png") no-repeat
+    calc(100% + 160px) center / min(70vw, 820px);
   opacity: 0.05;
 }
-.presentation::before {
-  filter: brightness(0) invert(1);
+@media (max-width: 720px) {
+  .purpose::before {
+    background-size: 110vw;
+    background-position: calc(100% + 100px) center;
+  }
+}
+
+/* WhatsApp button reuses the tapping hand; the ring wraps the label, not the icon. */
+.whatsapp-tap {
+  display: flex;
+  width: 100%;
+  max-width: 460px;
+  margin-top: 32px;
+  --icon-offset: 72px;
+}
+.whatsapp-tap::after {
+  left: var(--icon-offset);
+}
+.presentation-layout {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+
+/* Image viewer: natural proportions plus the card text. */
+[data-lightbox] {
+  cursor: zoom-in;
+}
+[data-lightbox]:focus-visible {
+  outline: 3px solid var(--action);
+  outline-offset: 4px;
+}
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+}
+.lightbox[open] {
+  display: grid;
+  place-items: center;
+  animation: lightbox-in 0.28s ease-out;
+}
+.lightbox::backdrop {
+  background: rgb(24 17 11 / 88%);
+  backdrop-filter: blur(4px);
+}
+.lightbox figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: min(1100px, 100%);
+}
+.lightbox img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 190px);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px #0007;
+}
+.lightbox figcaption {
+  text-align: center;
+  max-width: 640px;
+}
+.lightbox h3 {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.lightbox p {
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #eadfd2;
+}
+.lightbox button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #ffffff40;
+  background: #ffffff1a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox button:hover {
+  background: #ffffff33;
+}
+.lightbox button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.lightbox-close {
+  top: 18px;
+  right: 18px;
+}
+.lightbox-nav {
+  top: 50%;
+  translate: 0 -50%;
+}
+.lightbox-nav.prev {
+  left: 18px;
+}
+.lightbox-nav.next {
+  right: 18px;
+}
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
 }
 @media (max-width: 720px) {
-  .presentation::before,
-  .purpose::before,
-  .social-section::before {
-    background-size: 115vw;
-    background-position: calc(100% + 105px) center;
+  .presentation-layout {
+    grid-template-columns: 1fr;
+  }
+  .lightbox {
+    padding: 70px 12px 84px;
+  }
+  .lightbox img {
+    max-height: calc(100dvh - 300px);
+    border-radius: 12px;
+  }
+  .lightbox h3 {
+    font-size: 20px;
+  }
+  .lightbox p {
+    font-size: 15px;
+  }
+  .lightbox-nav {
+    top: auto;
+    bottom: 20px;
+    translate: none;
+  }
+  .lightbox-nav.prev {
+    left: calc(50% - 60px);
+  }
+  .lightbox-nav.next {
+    right: calc(50% - 60px);
   }
 }
