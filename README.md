@@ -40,5 +40,5 @@ GitHub Pages publica la raíz de `main` en cada push.
 
 - Portada con Área de Ciencias y Tecnología, modalidad presencial y duración de 5 años / 10 semestres, según la captura indicada por el solicitante.
 - Títulos de impacto en gris y naranja inspirados en el rótulo original.
-- Marca de agua del logo a 2,5 % de opacidad, fija y sin capturar eventos.
+- Marca de agua del logo a 5 % de opacidad, sin capturar eventos, con capas propias en las secciones de fondo opaco y versión clara sobre el fondo oscuro.
 - CSS y JavaScript versionados para que los navegadores reciban los cambios de entrada sin reutilizar el efecto anterior.

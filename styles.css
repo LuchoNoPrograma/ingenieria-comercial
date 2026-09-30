@@ -1073,12 +1073,46 @@ body::before {
   background-repeat: no-repeat;
   background-position: calc(100% + 150px) 18vh;
   background-size: min(78vw, 900px);
-  opacity: 0.025;
+  opacity: 0.05;
 }
 @media (max-width: 720px) {
   body::before {
     background-size: 115vw;
     background-position: calc(100% + 105px) 28vh;
-    opacity: 0.025;
+    opacity: 0.05;
+  }
+}
+
+/* Opaque section backgrounds need their own watermark layer. */
+.presentation,
+.purpose,
+.social-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.presentation::before,
+.purpose::before,
+.social-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("./assets/logo-transparent.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% + 150px) center;
+  background-size: min(78vw, 900px);
+  opacity: 0.05;
+}
+.presentation::before {
+  filter: brightness(0) invert(1);
+}
+@media (max-width: 720px) {
+  .presentation::before,
+  .purpose::before,
+  .social-section::before {
+    background-size: 115vw;
+    background-position: calc(100% + 105px) center;
   }
 }
