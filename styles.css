@@ -594,27 +594,12 @@ h1 {
 .motion-ready .reveal:not(.is-visible) {
   opacity: 0;
   transform: translateY(20px);
-  filter: blur(5px);
 }
 .motion-ready .reveal {
   transition:
     opacity 0.75s ease,
-    filter 0.75s ease,
     transform 0.75s cubic-bezier(0.2, 0.65, 0.3, 1);
   transition-delay: var(--delay, 0ms);
-}
-.entrance-ready body {
-  animation: landing-entrance 0.75s cubic-bezier(0.2, 0.65, 0.3, 1);
-}
-@keyframes landing-entrance {
-  from {
-    opacity: 0;
-    filter: blur(12px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-  }
 }
 @media (max-width: 1050px) {
   .brand-text {
@@ -959,5 +944,141 @@ h1 {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+}
+
+/* Two-tone promotional typography inspired by the supplied Canva wordmark. */
+h1,
+.brand-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #393b3c;
+}
+h1 {
+  letter-spacing: -0.055em;
+  line-height: 1.01;
+}
+.title-accent,
+.brand-accent {
+  color: #a95708;
+}
+h1 .title-accent {
+  color: #aa5908;
+  text-shadow: 0 1px 0 #66350522;
+}
+.brand-text {
+  font-size: 24px;
+  letter-spacing: -0.8px;
+  line-height: 1.02;
+}
+.brand-text small {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  margin-top: 8px;
+  color: var(--muted);
+}
+.career-facts {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin: 25px 0 0;
+  width: 100%;
+}
+.career-facts > div {
+  border: 1px solid #987653;
+  border-radius: 19px;
+  padding: 12px 15px;
+  min-width: 0;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.career-facts dt,
+.career-facts dd {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.career-facts dt {
+  font-weight: 400;
+  color: #6b5036;
+}
+.career-facts dd {
+  font-weight: 500;
+  color: #3e3025;
+}
+.hero-copy {
+  padding-block: 38px;
+}
+.hero-actions {
+  margin-top: 27px;
+}
+@media (max-width: 1050px) {
+  .brand-text {
+    font-size: 21px;
+  }
+  .career-facts {
+    gap: 8px;
+  }
+  .career-facts > div {
+    padding: 11px 8px;
+  }
+  .career-facts dt,
+  .career-facts dd {
+    font-size: 11px;
+  }
+}
+@media (max-width: 720px) {
+  .brand-text {
+    font-size: 22px;
+  }
+  .brand-text small {
+    font-size: 7px;
+  }
+  .hero-copy {
+    padding-block: 29px;
+  }
+  .career-facts {
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .career-facts > div {
+    padding: 11px 5px;
+    border-radius: 16px;
+  }
+  .career-facts dt,
+  .career-facts dd {
+    font-size: 10px;
+  }
+  .hero-actions {
+    margin-top: 25px;
+  }
+}
+/* Quiet brand watermark, behind the page content and below the full-screen intro. */
+body {
+  isolation: isolate;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("./assets/logo-transparent.png");
+  background-repeat: no-repeat;
+  background-position: calc(100% + 150px) 18vh;
+  background-size: min(78vw, 900px);
+  opacity: 0.025;
+}
+@media (max-width: 720px) {
+  body::before {
+    background-size: 115vw;
+    background-position: calc(100% + 105px) 28vh;
+    opacity: 0.025;
   }
 }

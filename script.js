@@ -1,6 +1,36 @@
-// A 750 ms blur-to-focus entrance for the whole page, including header and footer.
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  document.documentElement.classList.add("entrance-ready");
+// Blur the entire viewport above every layer, then clear it once content is ready.
+const introRoot = document.documentElement;
+const introOverlay = document.querySelector(".page-intro");
+function finishIntro() {
+  clearTimeout(window.pageIntroSafety);
+  introRoot.classList.remove("intro-pending", "intro-running");
+  introOverlay?.remove();
+}
+if (introRoot.classList.contains("intro-pending")) {
+  const pageLoaded =
+    document.readyState === "complete"
+      ? Promise.resolve()
+      : new Promise((resolve) =>
+          window.addEventListener("load", resolve, { once: true }),
+        );
+  const fontsLoaded = document.fonts ? document.fonts.ready : Promise.resolve();
+  Promise.race([
+    Promise.all([pageLoaded, fontsLoaded]),
+    new Promise((resolve) => setTimeout(resolve, 2500)),
+  ]).then(() => {
+    if (!introRoot.classList.contains("intro-pending")) return;
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        introOverlay.addEventListener("animationend", finishIntro, {
+          once: true,
+        });
+        introRoot.classList.add("intro-running");
+        setTimeout(finishIntro, 900);
+      }),
+    );
+  });
+} else {
+  introOverlay?.remove();
 }
 
 const header = document.querySelector(".site-header");

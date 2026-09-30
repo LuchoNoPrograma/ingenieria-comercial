@@ -33,10 +33,77 @@
     />
     <link rel="icon" href="./assets/logo-transparent.png" type="image/png" />
     <link rel="apple-touch-icon" href="./assets/logo-transparent.png" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./script.js" defer></script>
+    <style>
+      .page-intro {
+        display: none;
+      }
+      .intro-pending .page-intro {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        pointer-events: none;
+        background: rgba(251, 247, 240, 0.035);
+        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px);
+      }
+      .intro-running .page-intro {
+        animation: clear-page-intro 0.75s ease-out forwards;
+      }
+      @keyframes clear-page-intro {
+        from {
+          -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+        }
+        to {
+          -webkit-backdrop-filter: blur(0);
+          backdrop-filter: blur(0);
+        }
+      }
+      @supports not (
+        (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+      ) {
+        .intro-pending body > :not(.page-intro) {
+          filter: blur(16px);
+        }
+        .intro-running body > :not(.page-intro) {
+          animation: clear-page-fallback 0.75s ease-out forwards;
+        }
+        @keyframes clear-page-fallback {
+          to {
+            filter: blur(0);
+          }
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .intro-pending .page-intro {
+          display: none;
+        }
+        .intro-pending body > :not(.page-intro) {
+          filter: none;
+          animation: none;
+        }
+      }
+    </style>
+    <script>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("intro-pending");
+        // Never leave the page blurred if a later script or request fails.
+        window.pageIntroSafety = setTimeout(
+          () =>
+            document.documentElement.classList.remove(
+              "intro-pending",
+              "intro-running",
+            ),
+          6000,
+        );
+      }
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=global-intro-2" />
+    <script src="./script.js?v=global-intro-2" defer></script>
   </head>
   <body>
+    <div class="page-intro" aria-hidden="true"></div>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
       <div class="wrap header-inner">
@@ -48,7 +115,8 @@
             width="512"
             height="512"
           /><span class="brand-text"
-            >CARRERA<br />PROFESIONAL<small>INGENIERÍA COMERCIAL</small></span
+            >Ingeniería<br /><span class="brand-accent">Comercial</span
+            ><small>CARRERA PROFESIONAL</small></span
           ></a
         >
         <button
@@ -89,11 +157,27 @@
             fetchpriority="high"
           />
           <div class="hero-copy">
-            <h1 id="hero-title">Ingeniería<br />Comercial</h1>
+            <h1 id="hero-title">
+              Ingeniería<br /><span class="title-accent">Comercial</span>
+            </h1>
             <p>
               Construye una mirada estratégica para liderar organizaciones,
               emprendimientos y oportunidades.
             </p>
+            <dl class="career-facts" aria-label="Información de la carrera">
+              <div>
+                <dt>Área</dt>
+                <dd>Ciencias y<br />Tecnología</dd>
+              </div>
+              <div>
+                <dt>Modalidad</dt>
+                <dd>Presencial</dd>
+              </div>
+              <div>
+                <dt>Duración</dt>
+                <dd>5 años /<br />10 semestres</dd>
+              </div>
+            </dl>
             <div class="hero-actions">
               <a
                 class="button register-button"
@@ -189,7 +273,7 @@
       <section class="purpose" id="proposito" aria-labelledby="purpose-title">
         <div class="wrap">
           <h2 class="section-title reveal" id="purpose-title">
-            Un propósito que nos mueve.
+            Un propósito que <span class="title-accent">nos mueve.</span>
           </h2>
           <div class="purpose-grid">
             <article id="mision" class="purpose-card reveal">
@@ -292,7 +376,9 @@
           <div>
             <span class="section-label">DA EL SIGUIENTE PASO</span>
             <h2 id="registration-title">
-              Tu próxima oportunidad<br />empieza aquí.
+              Tu próxima oportunidad<br /><span class="title-accent"
+                >empieza aquí.</span
+              >
             </h2>
             <p>Completa el formulario de registro para dar el primer paso.</p>
           </div>

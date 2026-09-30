@@ -10,7 +10,7 @@ Landing estática publicada en https://luchonoprograma.github.io/ingenieria-come
 - Botón de WhatsApp con el icono original verde y texto blanco subrayado; naranja oscuro ajustado para un contraste de 6,09:1.
 - Presentación horizontal original en una sección amplia e independiente, con el logo al lado. Sección de TikTok con los dos videos verticales originales. Controles nativos, sin reproducción automática y carga bajo demanda. Al reproducir uno se pausan los demás.
 - Perfil de TikTok tomado de la marca de agua de los videos: `@uap_1993`.
-- Entrada global de toda la página, incluida cabecera y pie, con blur y fade de 750 ms, apariciones al desplazarse, navegación móvil y soporte de movimiento reducido.
+- Entrada con una capa de desenfoque de pantalla completa por encima de cabecera, textos, botones e imágenes; espera la carga inicial y se disuelve en 750 ms, con salida de seguridad y soporte de movimiento reducido, apariciones al desplazarse, navegación móvil y soporte de movimiento reducido.
 - Logo con fondo transparente en cabecera, presentación, pie, favicon y apple-touch-icon (`assets/logo-transparent.png`). Fondo retirado con Image Gen, conservando el diseño. Original en `assets/logo.png`.
 - Registro como acción principal en cabecera, portada y bloque final independiente; abre el formulario original de Canva. El acceso a WhatsApp ocupa un bloque separado, con mayor espaciado.
 
@@ -35,3 +35,10 @@ python3 -m http.server 4173
 Abrir http://localhost:4173. No hay dependencias ni compilación. Para probar también el avance de los videos, usar un servidor con soporte HTTP Range, por ejemplo `npx http-server -p 4174`; GitHub Pages admite estas peticiones.
 
 GitHub Pages publica la raíz de `main` en cada push.
+
+## Ajustes del afiche web
+
+- Portada con Área de Ciencias y Tecnología, modalidad presencial y duración de 5 años / 10 semestres, según la captura indicada por el solicitante.
+- Títulos de impacto en gris y naranja inspirados en el rótulo original.
+- Marca de agua del logo a 2,5 % de opacidad, fija y sin capturar eventos.
+- CSS y JavaScript versionados para que los navegadores reciban los cambios de entrada sin reutilizar el efecto anterior.
