@@ -1,4 +1,4 @@
-// A 750 ms blur-to-focus entrance; CSS disables it for reduced motion.
+// A 750 ms blur-to-focus entrance for the whole page, including header and footer.
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.documentElement.classList.add("entrance-ready");
 }
