@@ -1538,54 +1538,6 @@ body {
     right: calc(50% - 60px);
   }
 }
-/* Activities: short intro beside the program's own TikTok video. */
-.life {
-  padding-block: 20px 96px;
-}
-.life-heading .section-title {
-  margin-bottom: 22px;
-}
-.life-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
-  align-items: center;
-  gap: 48px;
-}
-.life-copy {
-  max-width: 560px;
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--muted);
-}
-@media (max-width: 1050px) {
-  .life-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 240px);
-    gap: 32px;
-  }
-}
-@media (max-width: 720px) {
-  .life-layout {
-    grid-template-columns: 1fr;
-  }
-  .life-layout .portrait-video {
-    width: min(100%, 300px);
-    margin-inline: auto;
-  }
-  .life-copy {
-    font-size: 16px;
-  }
-}
-@media (max-width: 520px) {
-  .life {
-    padding-block: 8px 56px;
-  }
-}
-/* The brand already links to the top; free room for the extra nav item on tablets. */
-@media (min-width: 721px) and (max-width: 900px) {
-  .nav-link[href="#inicio"] {
-    display: none;
-  }
-}
 /* Professional profile spans both columns under mission and vision. */
 .purpose-profile {
   grid-column: 1 / -1;
