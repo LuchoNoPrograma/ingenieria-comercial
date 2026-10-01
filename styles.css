@@ -1613,3 +1613,7 @@ body {
     padding: 31px 25px;
   }
 }
+/* The faculty name is longer than the other facts, so its box gets more room. */
+.career-facts > div:first-child {
+  flex: 2;
+}

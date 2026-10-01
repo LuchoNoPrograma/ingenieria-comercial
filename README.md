@@ -49,7 +49,7 @@ GitHub Pages publica la raíz de `main` en cada push.
 
 ## Ajustes del afiche web
 
-- Portada con Área de Ciencias y Tecnología, modalidad presencial y duración de 5 años / 10 semestres, según la captura indicada por el solicitante.
+- Portada con la Facultad de Ciencias Económicas, Administrativas y Financieras (antes «Área de Ciencias y Tecnología», cambiado por indicación del solicitante), modalidad presencial y duración de 5 años / 10 semestres.
 - Títulos de impacto en azul y naranja, como «INGENIERÍA COMERCIAL» en el logo.
 - Marca de agua del logo a 5 % de opacidad solo en la sección de misión y visión, estática. Se retiró la capa fija global y la versión clara sobre naranja porque se superponían y daban sensación de dos logos en movimiento.
 - CSS y JavaScript versionados para que los navegadores reciban los cambios de entrada sin reutilizar el efecto anterior.
