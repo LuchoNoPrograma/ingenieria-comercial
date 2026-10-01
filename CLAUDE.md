@@ -15,8 +15,8 @@ npx http-server -p 4174            # necesario para probar el avance (seek) de l
 
 ## Arquitectura
 
-- `index.html`: todo el contenido y los enlaces (registro → formulario de Canva, WhatsApp, TikTok `@uap_1993`). Secciones con `id`: `inicio`, `presentacion`, `proposito`, `espacios`, `campo-laboral`, `registro`, `comunidad`. El contenido proviene de la web de Canva, pero el solicitante quiere una versión limpia y moderna, no una copia literal: tarjetas claras con borde suave, títulos bicolor (`.title-accent`) y una sola banda naranja (presentación). Las apariciones al hacer scroll son laterales y leves (`.reveal.from-left` / `.from-right`).
-- `styles.css`: toda la apariencia; la paleta vive como custom properties en `:root` (`--paper`, `--peach`, `--sand`, `--orange`, `--action`, `--ink`, …). `--action` es el naranja oscuro elegido por contraste (6,09:1); conservar el contraste al cambiar colores.
+- `index.html`: todo el contenido y los enlaces (registro → formulario de Canva, WhatsApp, TikTok `@uap_1993`). Secciones con `id`: `inicio`, `presentacion`, `proposito`, `nosotros`, `campo-laboral`, `actividades`, `registro`, `comunidad`. El contenido proviene de la web de Canva, pero el solicitante quiere una versión limpia y moderna, no una copia literal: tarjetas claras con borde suave, títulos bicolor (`.title-accent`) y una sola banda de color (presentación, azul con filete naranja). Las apariciones al hacer scroll son laterales y leves (`.reveal.from-left` / `.from-right`).
+- `styles.css`: toda la apariencia; la paleta vive como custom properties en `:root` (`--paper`, `--tint`, `--sand`, `--orange`, `--action`, `--blue`, `--ink`, …). Los colores deben ser naranja y azul, tomados del logo (pedido del solicitante): títulos en `--blue` con acento `--orange`. `--action` (#c2410c) es el naranja de los botones, elegido por contraste con texto blanco (5,18:1); conservar el contraste al cambiar colores.
 - `script.js`: menú móvil, cabecera al hacer scroll, apariciones `.reveal` (IntersectionObserver añade `.is-visible`; sin JS el contenido queda visible), videos (solo uno reproduciéndose; se pausan al salir de pantalla), animación de pulsación `.cta-tap` (mano + rayitas + anillo, se repite al hacer clic) y visor `<dialog class="lightbox">` para los elementos con `data-lightbox` (toma título y texto del `figcaption` o de `data-title`/`alt`).
 
 ### Entrada con desenfoque (repartida en tres sitios)
@@ -33,11 +33,12 @@ Al tocar este efecto hay que mantener las tres piezas coherentes y las salidas d
 
 ## Recursos
 
-- `assets/logo-transparent.png` se usa en cabecera, presentación, pie, favicon, apple-touch-icon y marca de agua. La marca de agua es una sola capa estática en `.purpose` (5 % de opacidad): no añadir capas fijas ni repetirla en fondos naranjas, porque el solicitante percibió dos logos superpuestos y mareo. `assets/logo.png` es el original.
-- `assets/original/` y `assets/videos/` son descargas de la web de referencia en Canva (https://tarsier-9p5pj7.my.canva.site/); conservar sus nombres originales para poder rastrearlas.
+- `assets/logo-icom.png` (logo en rombo de Ingeniería Comercial, recortado de una captura enviada por el solicitante, 676×964) se usa en cabecera, portada, presentación, tarjeta de Auditorios, pie y marca de agua. `assets/favicon.png` y `assets/apple-touch-icon.png` usan solo el emblema «IC», porque el rombo completo no se lee a 16 px. El logo anterior de Ingeniería Financiera se retiró; no volver a usarlo. La marca de agua es una sola capa estática en `.purpose` (5 % de opacidad): no añadir capas fijas ni repetirla en fondos naranjas, porque el solicitante percibió dos logos superpuestos y mareo.
+- `assets/original/` y `assets/videos/` (salvo `tiktok-ing-comercial.mp4`, enviado por el solicitante) son descargas de la web de referencia en Canva (https://tarsier-9p5pj7.my.canva.site/); conservar sus nombres originales para poder rastrearlas.
+- `assets/comunidad/` contiene fotos propias de la carrera enviadas por el solicitante (renombradas; el README indica los nombres originales) y la portada del video `tiktok-ing-comercial.mp4`.
 - `assets/illustrations/` contiene iconos extraídos de las máscaras de la web de Canva (mano, libros, gráfico, portátil).
 - Fuentes locales en `assets/fonts/` cargadas vía `assets/fonts.css` (licencias OFL incluidas).
 - Evitar eslóganes genéricos de relleno: el solicitante los percibe como texto de IA.
-- Misión, visión y título provienen del folleto del solicitante; no reescribirlos sin indicación.
+- Misión, visión, perfil profesional y título provienen del folleto y del tríptico del solicitante; la lista de Campo laboral, de su afiche. No reescribirlos sin indicación.
 
 `README.md` documenta las decisiones de contenido y diseño; mantenerlo al día cuando cambien.

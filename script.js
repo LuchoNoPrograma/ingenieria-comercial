@@ -135,7 +135,7 @@ function showImage(index) {
   lightbox.querySelector("img").src = image.currentSrc || image.src;
   lightbox.querySelector("img").alt = image.alt;
   lightbox.querySelector("h3").textContent =
-    caption?.querySelector("h2")?.textContent || item.dataset.title || "";
+    caption?.querySelector("h2, h3")?.textContent || item.dataset.title || "";
   lightbox.querySelector("p").textContent =
     caption?.querySelector("p")?.textContent || image.alt;
 }
