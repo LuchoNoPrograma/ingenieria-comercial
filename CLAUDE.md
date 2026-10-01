@@ -34,8 +34,8 @@ Al tocar este efecto hay que mantener las tres piezas coherentes y las salidas d
 ## Recursos
 
 - `assets/logo-icom.png` (logo en rombo de Ingeniería Comercial, recortado de una captura enviada por el solicitante, 676×964) se usa en cabecera, portada, presentación, tarjeta de Auditorios, pie y marca de agua. `assets/favicon.png` y `assets/apple-touch-icon.png` usan solo el emblema «IC», porque el rombo completo no se lee a 16 px. El logo anterior de Ingeniería Financiera se retiró; no volver a usarlo. La marca de agua es una sola capa estática en `.purpose` (5 % de opacidad): no añadir capas fijas ni repetirla en fondos naranjas, porque el solicitante percibió dos logos superpuestos y mareo.
-- `assets/original/` y `assets/videos/` (salvo `tiktok-ing-comercial.mp4`, enviado por el solicitante) son descargas de la web de referencia en Canva (https://tarsier-9p5pj7.my.canva.site/); conservar sus nombres originales para poder rastrearlas.
-- `assets/comunidad/` contiene fotos propias de la carrera enviadas por el solicitante (renombradas; el README indica los nombres originales) y la portada del video `tiktok-ing-comercial.mp4`.
+- `assets/original/` y `assets/videos/` (salvo `tiktok-ing-comercial.mp4` y `presentacion-uap.mp4`, enviados por el solicitante) son descargas de la web de referencia en Canva (https://tarsier-9p5pj7.my.canva.site/); conservar sus nombres originales para poder rastrearlas.
+- `assets/comunidad/` contiene fotos propias de la carrera enviadas por el solicitante (renombradas; el README indica los nombres originales) y las portadas de los videos `tiktok-ing-comercial.mp4` y `presentacion-uap.mp4`.
 - `assets/illustrations/` contiene iconos extraídos de las máscaras de la web de Canva (mano, libros, gráfico, portátil).
 - Fuentes locales en `assets/fonts/` cargadas vía `assets/fonts.css` (licencias OFL incluidas).
 - Evitar eslóganes genéricos de relleno: el solicitante los percibe como texto de IA.

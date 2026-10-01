@@ -344,8 +344,9 @@ h1 {
 }
 .presentation-player video {
   display: block;
-  width: 100%;
-  aspect-ratio: 848/478;
+  width: min(100%, 340px);
+  margin-inline: auto;
+  aspect-ratio: 9/16;
   background: #0d1733;
   border: 3px solid var(--orange);
   border-radius: 30px;
@@ -1223,7 +1224,7 @@ h1 .title-accent {
   line-height: 1.15;
   max-width: 570px;
 }
-.community-panel > p {
+.community-copy > p {
   font-size: 18px;
   line-height: 1.7;
   margin-top: 20px;
@@ -1357,7 +1358,7 @@ body {
   .community h2 {
     font-size: 32px;
   }
-  .community-panel > p {
+  .community-copy > p {
     font-size: 16px;
   }
   .motion-ready .reveal.from-left:not(.is-visible) {
@@ -1408,7 +1409,9 @@ body {
   left: var(--icon-offset);
 }
 .presentation-layout {
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 150px minmax(0, 340px);
+  justify-content: center;
+  gap: 64px;
 }
 
 /* Image viewer: natural proportions plus the card text. */
@@ -1512,6 +1515,7 @@ body {
 @media (max-width: 720px) {
   .presentation-layout {
     grid-template-columns: 1fr;
+    gap: 25px;
   }
   .lightbox {
     padding: 70px 12px 84px;
@@ -1573,5 +1577,39 @@ body {
 @media (max-width: 720px) {
   .footer p {
     text-align: left;
+  }
+}
+/* Community panel spans the full width: copy on the left, WhatsApp and TikTok on the right. */
+.community-layout {
+  grid-template-columns: 1fr;
+}
+.community-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  align-items: center;
+  gap: 32px 56px;
+  padding: 52px 56px;
+}
+.community-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.community-actions .whatsapp-tap {
+  margin-top: 0;
+}
+@media (max-width: 1050px) {
+  .community-panel {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 36px;
+  }
+  .community-actions .whatsapp-tap {
+    margin-top: 28px;
+  }
+}
+@media (max-width: 720px) {
+  .community-panel {
+    padding: 31px 25px;
   }
 }
