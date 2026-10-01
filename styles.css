@@ -313,11 +313,6 @@ h1 {
   line-height: 1.5;
   max-width: 300px;
 }
-.presentation {
-  background: var(--blue);
-  border-top: 6px solid var(--orange);
-  padding-block: 62px 70px;
-}
 .section-title {
   font-size: clamp(32px, 3.7vw, 49px);
   line-height: 1.13;
@@ -326,33 +321,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-.presentation-layout {
-  display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  align-items: center;
-  gap: 38px;
-}
-.presentation-identity {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 23px;
-}
-.presentation-identity img {
-  width: 140px;
-  height: auto;
-}
-.presentation-player video {
-  display: block;
-  width: min(100%, 340px);
-  margin-inline: auto;
-  aspect-ratio: 9/16;
-  background: #0d1733;
-  border: 3px solid var(--orange);
-  border-radius: 30px;
-  object-fit: contain;
-  box-shadow: 0 14px 30px #13224f18;
-}
 .purpose {
   background: var(--paper);
   padding-block: 88px;
@@ -548,10 +516,6 @@ h1 {
   .photo-card figcaption {
     inset: 18px;
   }
-  .presentation-layout {
-    grid-template-columns: 120px minmax(0, 1fr);
-    gap: 24px;
-  }
   .purpose-card {
     padding: 30px;
   }
@@ -689,26 +653,7 @@ h1 {
     font-size: 14px;
     max-width: 290px;
   }
-  .presentation {
-    padding-block: 43px 46px;
-  }
 
-  .presentation-layout {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .presentation-identity {
-    flex-direction: row;
-    justify-content: center;
-    gap: 22px;
-  }
-  .presentation-identity img {
-    width: 85px;
-  }
-  .presentation-player video {
-    border-radius: 20px;
-    border-width: 2px;
-  }
   .purpose {
     padding-block: 52px;
   }
@@ -1075,13 +1020,6 @@ h1 .title-accent {
 .hero-actions {
   gap: 48px;
 }
-.presentation .section-title {
-  color: #fff;
-  text-align: center;
-  max-width: 850px;
-  margin-inline: auto;
-  text-shadow: 0 2px 0 #0b163640;
-}
 .spaces {
   background: var(--sand);
   padding-block: 88px;
@@ -1295,11 +1233,6 @@ body {
   .hero-actions {
     gap: 40px;
   }
-  .presentation .section-title {
-    font-size: 32px;
-    max-width: 400px;
-    margin-bottom: 28px;
-  }
   .spaces,
   .careers {
     padding-block: 52px;
@@ -1408,11 +1341,6 @@ body {
 .whatsapp-tap::after {
   left: var(--icon-offset);
 }
-.presentation-layout {
-  grid-template-columns: 150px minmax(0, 340px);
-  justify-content: center;
-  gap: 64px;
-}
 
 /* Image viewer: natural proportions plus the card text. */
 [data-lightbox] {
@@ -1513,10 +1441,6 @@ body {
   }
 }
 @media (max-width: 720px) {
-  .presentation-layout {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
   .lightbox {
     padding: 70px 12px 84px;
   }
@@ -1616,4 +1540,180 @@ body {
 /* The faculty name is longer than the other facts, so its box gets more room. */
 .career-facts > div:first-child {
   flex: 2;
+}
+
+/* Career introduction: editorial copy beside a compact, native video player. */
+.presentation {
+  padding-block: 40px 64px;
+  background: var(--paper);
+}
+.presentation-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 310px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 88px);
+  padding: clamp(32px, 5vw, 64px);
+  border: 1px solid #314777;
+  border-radius: 32px;
+  background: radial-gradient(ellipse at 100% 0%, #304d86 0%, transparent 60%), #13244d;
+  color: #fff;
+  box-shadow: 0 24px 50px -30px #13224f80;
+}
+.presentation-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 42px;
+}
+.presentation-identity img {
+  width: 42px;
+  height: auto;
+  flex-shrink: 0;
+}
+.presentation-identity p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.presentation-identity p span {
+  display: block;
+  color: #bdcbe5;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.presentation-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffb58f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.presentation-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+}
+.presentation h2 {
+  margin-block: 18px 22px;
+  font-size: clamp(38px, 4.6vw, 62px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+.presentation h2 span { color: #ffb58f; }
+.presentation-description {
+  max-width: 390px;
+  color: #d0daec;
+  font-size: 16px;
+  line-height: 1.75;
+}
+.presentation-facts {
+  display: flex;
+  gap: 32px;
+  margin: 30px 0;
+  padding-block: 22px;
+  border-block: 1px solid #ffffff26;
+}
+.presentation-facts > div + div {
+  border-left: 1px solid #ffffff26;
+  padding-left: 32px;
+}
+.presentation-facts dt {
+  font-size: 12px;
+  color: #bdcbe5;
+  margin-bottom: 7px;
+}
+.presentation-facts dd {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+.presentation-facts dd span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #bdcbe5;
+}
+.presentation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.presentation-link:hover { color: #ffb58f; }
+.presentation a:focus-visible,
+.presentation video:focus-visible { outline-color: #ffb58f; }
+.presentation-player { width: 100%; }
+.presentation-video-frame {
+  padding: 7px;
+  border: 1px solid #ffffff38;
+  border-radius: 23px;
+  background: #ffffff0d;
+  box-shadow: 0 20px 40px #06112f55;
+}
+.presentation-player video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #080f22;
+  border-radius: 16px;
+}
+.presentation-player figcaption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.presentation-player figcaption small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #bdcbe5;
+}
+.presentation-play-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  font-size: 10px;
+  color: #ffb58f;
+}
+@media (max-width: 900px) {
+  .presentation-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+    gap: 28px;
+    padding: 32px;
+  }
+  .presentation-identity { margin-bottom: 28px; }
+  .presentation-facts { gap: 20px; }
+  .presentation-facts > div + div { padding-left: 20px; }
+}
+@media (max-width: 720px) {
+  .presentation { padding-block: 20px 40px; }
+  .presentation-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding: 28px 22px;
+    border-radius: 24px;
+  }
+  .presentation h2 { font-size: clamp(38px, 8vw, 52px); }
+  .presentation-description { max-width: 100%; }
+  .presentation-player { max-width: 310px; margin-inline: auto; }
+  .presentation-facts { margin-block: 24px 16px; }
 }
