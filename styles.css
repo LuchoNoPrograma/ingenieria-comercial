@@ -662,20 +662,40 @@ h1 {
     margin-top: 26px;
   }
   .photo-card {
-    min-height: 260px;
+    min-height: 0;
+    flex-direction: column;
     border-radius: 23px;
   }
+  /* On phones the photo sits above the text instead of under it. */
+  .photo-card img {
+    position: static;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+  .photo-card:after {
+    display: none;
+  }
+  .photo-card:hover img {
+    transform: none;
+  }
   .photo-card figcaption {
-    padding: 58px 20px 20px;
+    position: static;
+    padding: 18px 20px 22px;
   }
   .photo-card .photo-number {
-    top: 20px;
-    left: 20px;
+    top: 14px;
+    left: 14px;
+    background: #13224fb3;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
-
+  .photo-card h2 {
+    font-size: 21px;
+  }
   .photo-card p {
     font-size: 14px;
-    max-width: 290px;
+    max-width: none;
+    color: #ffffffd9;
   }
 
   .purpose {

@@ -132,7 +132,8 @@ function showImage(index) {
   const item = gallery[current];
   const image = item.tagName === "IMG" ? item : item.querySelector("img");
   const caption = item.querySelector("figcaption");
-  lightbox.querySelector("img").src = image.currentSrc || image.src;
+  // The src attribute holds the full-size photo; srcset may pick a smaller one.
+  lightbox.querySelector("img").src = image.src;
   lightbox.querySelector("img").alt = image.alt;
   lightbox.querySelector("h3").textContent =
     caption?.querySelector("h2, h3")?.textContent || item.dataset.title || "";
