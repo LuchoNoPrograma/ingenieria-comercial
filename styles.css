@@ -656,10 +656,30 @@ h1 {
   .text-link {
     font-size: 13px;
   }
+  /* Swipeable row on phones; the next card peeks in to invite a swipe. */
   .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 14px;
     margin-top: 26px;
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0 var(--gutter) 6px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .photo-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .photo-grid .photo-card {
+    scroll-snap-align: start;
+  }
+  .motion-ready .photo-grid .reveal:not(.is-visible) {
+    opacity: 0.7;
+    transform: scale(0.95);
   }
   .photo-card {
     min-height: 0;
@@ -680,6 +700,7 @@ h1 {
   }
   .photo-card figcaption {
     position: static;
+    justify-content: flex-start;
     padding: 18px 20px 22px;
   }
   .photo-card .photo-number {
@@ -696,6 +717,21 @@ h1 {
     font-size: 14px;
     max-width: none;
     color: #ffffffd9;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+  .photo-card figcaption:after {
+    content: "Ver más →";
+    display: block;
+    margin-top: auto;
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    /* Light orange keeps 9:1 contrast on the navy card. */
+    color: #ffb58f;
   }
 
   .purpose {
@@ -1489,7 +1525,7 @@ body {
     padding: 70px 12px 84px;
   }
   .lightbox img {
-    max-height: calc(100dvh - 300px);
+    max-height: calc(100dvh - 330px);
     border-radius: 12px;
   }
   .lightbox h3 {
@@ -1508,6 +1544,124 @@ body {
   }
   .lightbox-nav.next {
     right: calc(50% - 60px);
+  }
+}
+/* Subtle position dots for the lightbox and the phone card carousel. */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+.dots button,
+.lightbox .dots button {
+  position: static;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 11px;
+  background: none;
+  cursor: pointer;
+}
+.dots button::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: var(--dot, #13224f40);
+  transition:
+    width 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease;
+}
+.dots button[aria-current="true"]::before {
+  width: 20px;
+  background: var(--dot-active, var(--blue));
+}
+.dots button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 0;
+}
+.lightbox .dots {
+  --dot: #ffffff4d;
+  --dot-active: #ffb58f;
+}
+.lightbox .dots button:hover {
+  background: none;
+}
+.lightbox .dots button:focus-visible {
+  outline-color: #fff;
+}
+.photo-dots {
+  display: none;
+  margin-top: 12px;
+}
+@media (max-width: 720px) {
+  .photo-dots {
+    display: flex;
+  }
+  /* The card in view stands forward; its neighbours rest slightly back. */
+  .photo-grid .photo-card {
+    transition:
+      transform 0.5s cubic-bezier(0.2, 0.65, 0.3, 1),
+      opacity 0.5s ease;
+  }
+  .photo-grid .photo-card:not(.is-current) {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  .photo-grid .photo-card img {
+    transform: scale(1.06);
+    transition: transform 0.9s cubic-bezier(0.2, 0.65, 0.3, 1);
+  }
+  .photo-grid .photo-card.is-current img {
+    transform: none;
+  }
+}
+
+/* Lightbox photos slide in from the side the viewer is moving toward. */
+.lightbox.slide-next img,
+.lightbox.slide-prev img {
+  animation: lightbox-slide 0.42s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+.lightbox.slide-prev img {
+  --from: -28px;
+}
+.lightbox.slide-next figcaption,
+.lightbox.slide-prev figcaption {
+  animation: lightbox-caption 0.42s 0.08s ease-out backwards;
+}
+@keyframes lightbox-slide {
+  from {
+    opacity: 0;
+    transform: translateX(var(--from, 28px)) scale(0.98);
+  }
+}
+@keyframes lightbox-caption {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-grid .photo-card,
+  .photo-grid .photo-card img,
+  .dots button::before {
+    transition: none;
+  }
+  .photo-grid .photo-card:not(.is-current) {
+    transform: none;
+    opacity: 1;
+  }
+  .photo-grid .photo-card img {
+    transform: none;
+  }
+  .lightbox.slide-next img,
+  .lightbox.slide-prev img,
+  .lightbox.slide-next figcaption,
+  .lightbox.slide-prev figcaption {
+    animation: none;
   }
 }
 /* Professional profile spans both columns under mission and vision. */

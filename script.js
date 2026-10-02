@@ -127,8 +127,35 @@ document.querySelectorAll(".cta-tap").forEach((tap) =>
 const lightbox = document.querySelector(".lightbox");
 const gallery = [...document.querySelectorAll("[data-lightbox]")];
 let current = 0;
-function showImage(index) {
+// Build clickable position dots; returns a function that marks the active one.
+function buildDots(container, count, label, onPick) {
+  const buttons = Array.from({ length: count }, (_, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.setAttribute("aria-label", `${label} ${index + 1} de ${count}`);
+    button.addEventListener("click", () => onPick(index));
+    container.append(button);
+    return button;
+  });
+  return (active) =>
+    buttons.forEach((button, index) =>
+      button.setAttribute("aria-current", String(index === active)),
+    );
+}
+const markLightboxDot = buildDots(
+  lightbox.querySelector(".lightbox-dots"),
+  gallery.length,
+  "Imagen",
+  (index) => showImage(index, index - current),
+);
+function showImage(index, direction) {
   current = (index + gallery.length) % gallery.length;
+  markLightboxDot(current);
+  lightbox.classList.remove("slide-next", "slide-prev");
+  if (direction) {
+    void lightbox.offsetWidth;
+    lightbox.classList.add(direction > 0 ? "slide-next" : "slide-prev");
+  }
   const item = gallery[current];
   const image = item.tagName === "IMG" ? item : item.querySelector("img");
   const caption = item.querySelector("figcaption");
@@ -162,16 +189,16 @@ lightbox
   .addEventListener("click", () => lightbox.close());
 lightbox
   .querySelector(".prev")
-  .addEventListener("click", () => showImage(current - 1));
+  .addEventListener("click", () => showImage(current - 1, -1));
 lightbox
   .querySelector(".next")
-  .addEventListener("click", () => showImage(current + 1));
+  .addEventListener("click", () => showImage(current + 1, 1));
 lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) lightbox.close();
 });
 lightbox.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") showImage(current - 1);
-  if (event.key === "ArrowRight") showImage(current + 1);
+  if (event.key === "ArrowLeft") showImage(current - 1, -1);
+  if (event.key === "ArrowRight") showImage(current + 1, 1);
 });
 lightbox.addEventListener("close", () => gallery[current].focus());
 
@@ -194,3 +221,33 @@ if (
     heroSlides[activeSlide].classList.add("is-active");
   }, 5000);
 }
+
+// Dots under the phone card carousel follow the scroll and jump to a card.
+const photoGrid = document.querySelector(".photo-grid");
+const photoCards = [...photoGrid.querySelectorAll(".photo-card")];
+const markPhotoDot = buildDots(
+  document.querySelector(".photo-dots"),
+  photoCards.length,
+  "Actividad",
+  (index) =>
+    photoGrid.scrollTo({
+      left: photoCards[index].offsetLeft - photoCards[0].offsetLeft,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    }),
+);
+function updatePhotoDot() {
+  const step = photoCards[1].offsetLeft - photoCards[0].offsetLeft;
+  const atEnd =
+    photoGrid.scrollLeft + photoGrid.clientWidth >= photoGrid.scrollWidth - 2;
+  const active = atEnd
+    ? photoCards.length - 1
+    : Math.round(photoGrid.scrollLeft / step);
+  markPhotoDot(active);
+  photoCards.forEach((card, index) =>
+    card.classList.toggle("is-current", index === active),
+  );
+}
+photoGrid.addEventListener("scroll", updatePhotoDot, { passive: true });
+updatePhotoDot();
