@@ -177,11 +177,28 @@ video:focus-visible {
   min-height: 445px;
   box-shadow: 0 12px 32px #13224f08;
 }
+.hero-slides {
+  position: relative;
+  overflow: hidden;
+  background: var(--blue-deep);
+}
 .hero-photo {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1.2s ease,
+    visibility 0s 1.2s;
+}
+.hero-photo.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.2s ease;
 }
 .hero-copy {
   padding: 48px 40px;
@@ -250,18 +267,22 @@ h1 {
 }
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 30px;
 }
+/* The caption sets the card height so long descriptions never overflow. */
 .photo-card {
-  height: 244px;
+  min-height: 320px;
   position: relative;
+  display: flex;
   border-radius: 24px;
   overflow: hidden;
   background: var(--blue-deep);
 }
 .photo-card img {
+  position: absolute;
+  inset: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -276,14 +297,16 @@ h1 {
   inset: 0;
   background: linear-gradient(
     180deg,
-    #0d1a3a08 10%,
-    #0d1a3a15 36%,
-    #0d1a3aeb 100%
+    #0d1a3a08 0%,
+    #0d1a3a33 25%,
+    #0d1a3ad0 55%,
+    #0d1a3af2 100%
   );
 }
 .photo-card figcaption {
-  position: absolute;
-  inset: 20px 22px;
+  position: relative;
+  flex: 1;
+  padding: 64px 22px 20px;
   z-index: 1;
   color: white;
   display: flex;
@@ -292,8 +315,8 @@ h1 {
 }
 .photo-number {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20px;
+  left: 22px;
   border: 1px solid #fff;
   border-radius: 30px;
   padding: 2px 9px;
@@ -311,7 +334,7 @@ h1 {
 .photo-card p {
   font-size: 14px;
   line-height: 1.5;
-  max-width: 300px;
+  max-width: 470px;
 }
 .section-title {
   font-size: clamp(32px, 3.7vw, 49px);
@@ -511,10 +534,10 @@ h1 {
     gap: 16px;
   }
   .photo-card {
-    height: 225px;
+    min-height: 300px;
   }
-  .photo-card figcaption {
-    inset: 18px;
+  .photo-card h2 {
+    font-size: 23px;
   }
   .purpose-card {
     padding: 30px;
@@ -608,10 +631,8 @@ h1 {
     grid-template-columns: 1fr;
     border-radius: 25px;
   }
-  .hero-photo {
-    height: auto;
+  .hero-slides {
     aspect-ratio: 1.5;
-    object-fit: cover;
   }
   .hero-copy {
     padding: 30px 25px 34px;
@@ -641,12 +662,15 @@ h1 {
     margin-top: 26px;
   }
   .photo-card {
-    height: auto;
-    aspect-ratio: 1.55;
+    min-height: 260px;
     border-radius: 23px;
   }
   .photo-card figcaption {
-    inset: 20px;
+    padding: 58px 20px 20px;
+  }
+  .photo-card .photo-number {
+    top: 20px;
+    left: 20px;
   }
 
   .photo-card p {

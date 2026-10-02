@@ -173,3 +173,23 @@ lightbox.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") showImage(current + 1);
 });
 lightbox.addEventListener("close", () => gallery[current].focus());
+
+// Cross-fade the hero photos; with reduced motion only the first one shows.
+const heroSlides = [...document.querySelectorAll(".hero-photo")];
+if (
+  heroSlides.length > 1 &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  let activeSlide = 0;
+  setInterval(() => {
+    if (
+      document.hidden ||
+      lightbox.open ||
+      heroSlides.includes(document.activeElement)
+    )
+      return;
+    heroSlides[activeSlide].classList.remove("is-active");
+    activeSlide = (activeSlide + 1) % heroSlides.length;
+    heroSlides[activeSlide].classList.add("is-active");
+  }, 5000);
+}

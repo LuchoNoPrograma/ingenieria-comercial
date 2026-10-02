@@ -100,8 +100,8 @@
         );
       }
     </script>
-    <link rel="stylesheet" href="./styles.css?v=icom-10" />
-    <script src="./script.js?v=icom-1" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=icom-11" />
+    <script src="./script.js?v=icom-2" defer></script>
   </head>
   <body>
     <div class="page-intro" aria-hidden="true"></div>
@@ -132,7 +132,7 @@
         </button>
         <nav class="nav" id="navigation" aria-label="Navegación principal">
           <a class="nav-link active" href="#inicio">Información</a
-          ><a class="nav-link" href="#proposito">Misión y perfil</a
+          ><a class="nav-link" href="#proposito">Perfil y misión</a
           ><a class="nav-link" href="#nosotros">Nosotros</a
           ><a class="nav-link" href="#campo-laboral">Campo laboral</a
           ><a class="nav-link" href="#comunidad">Comunidad</a
@@ -150,16 +150,27 @@
       <section id="inicio" class="intro" aria-labelledby="hero-title">
         <div class="wrap">
           <div class="hero-panel">
-            <img
-              data-lightbox
-              data-title="Convivencia de la carrera"
-              class="hero-photo"
-              src="./assets/comunidad/convivencia.jpg"
-              alt="Estudiantes y docentes de Ingeniería Comercial reunidos al aire libre"
-              width="1600"
-              height="1066"
-              fetchpriority="high"
-            />
+            <div class="hero-slides">
+              <img
+                data-lightbox
+                data-title="Feria de la FCEAF"
+                class="hero-photo is-active"
+                src="./assets/comunidad/portada-feria.jpg"
+                alt="Estudiantes y docentes de Ingeniería Comercial en un stand de feria"
+                width="1280"
+                height="683"
+                fetchpriority="high"
+              />
+              <img
+                data-lightbox
+                data-title="Promoción 2026"
+                class="hero-photo"
+                src="./assets/comunidad/portada-promocion-2026.jpg"
+                alt="Promoción 2026 de Ingeniería Comercial con sus carteles y docentes"
+                width="891"
+                height="594"
+              />
+            </div>
             <div class="hero-copy">
               <span class="section-label hero-faculty"
                 >FACULTAD DE CIENCIAS ECONÓMICAS, ADMINISTRATIVAS Y
@@ -226,11 +237,11 @@
               />
               <figcaption>
                 <span class="photo-number">01</span>
-                <h2>Expo Innova 2026</h2>
-                <p>Feria de Innovación y Emprendimiento de la FCEAF.</p>
+                <h2>Expo Innova. Feria de Innovación y Emprendimiento FCEAF 2026</h2>
+                <p>Expo Innova 2026 es el espacio donde podrás descubrir, crear y presentar tus propias ideas de negocio y emprendimientos. Conoce cómo nuestros estudiantes transforman ideas en proyectos reales y vive de cerca la innovación y el espíritu emprendedor de la FCEAF.</p>
               </figcaption>
             </figure>
-            <figure data-lightbox class="photo-card reveal" style="--delay: 90ms">
+            <figure data-lightbox class="photo-card reveal from-right" style="--delay: 90ms">
               <img
                 src="./assets/comunidad/adultos-mayores.jpg"
                 alt="Estudiantes de Ingeniería Comercial con su docente en Cobija"
@@ -239,21 +250,36 @@
               />
               <figcaption>
                 <span class="photo-number">02</span>
-                <h2>Emprendimientos de adultos mayores</h2>
-                <p>Estudiantes de la carrera impulsan los emprendimientos de adultos mayores en Cobija.</p>
+                <h2>Actividad: Extensión universitaria</h2>
+                <p>La carrera de Ingeniería Comercial te permitirá participar dentro de actividades, proyectos y acciones junto a la comunidad, aplicando lo aprendido en situaciones reales y fortaleciendo tus habilidades profesionales, sociales y de liderazgo.</p>
               </figcaption>
             </figure>
-            <figure data-lightbox class="photo-card reveal from-right" style="--delay: 180ms">
+            <figure data-lightbox class="photo-card reveal from-left">
               <img
+                loading="lazy"
                 src="./assets/comunidad/integracion.jpg"
-                alt="Equipos de Ingeniería Comercial con sus banderines en una jornada de integración"
+                alt="Equipos de Ingeniería Comercial con sus banderines en el taller de cuerdas"
                 width="1600"
                 height="1066"
               />
               <figcaption>
                 <span class="photo-number">03</span>
-                <h2>Jornada de integración</h2>
-                <p>Equipos de la carrera, cada uno con su banderín.</p>
+                <h2>Taller de cuerdas</h2>
+                <p>Dentro de la carrera de Ingeniería Comercial tendrás una experiencia dinámica donde podrás participar en desafíos y actividades que fortalecen el trabajo en equipo, la confianza, el liderazgo y la comunicación, mientras aprendes de una forma práctica y diferente.</p>
+              </figcaption>
+            </figure>
+            <figure data-lightbox class="photo-card reveal from-right" style="--delay: 90ms">
+              <img
+                loading="lazy"
+                src="./assets/comunidad/convivencia.jpg"
+                alt="Estudiantes y docentes de Ingeniería Comercial reunidos al aire libre"
+                width="1600"
+                height="1066"
+              />
+              <figcaption>
+                <span class="photo-number">04</span>
+                <h2>Campo abierto</h2>
+                <p>Dentro de la carrera de Ingeniería Comercial, las actividades de campo abierto te permiten aprender en escenarios reales, participar en experiencias fuera del aula y conectar la formación académica con el entorno de una manera más práctica y vivencial.</p>
               </figcaption>
             </figure>
           </div>
@@ -286,13 +312,13 @@
                   controls
                   playsinline
                   preload="none"
-                  poster="./assets/comunidad/presentacion-uap-poster.jpg"
-                  aria-label="Presentación de Ingeniería Comercial, video de la UAP"
+                  poster="./assets/comunidad/presentacion-carrera-poster.jpg"
+                  aria-label="Video de presentación de Ingeniería Comercial"
                   aria-describedby="presentation-caption"
                 >
-                  <source src="./assets/videos/presentacion-uap.mp4" type="video/mp4" />
+                  <source src="./assets/videos/presentacion-carrera.mp4" type="video/mp4" />
                   Tu navegador no admite video.
-                  <a href="./assets/videos/presentacion-uap.mp4">Descargar video</a>
+                  <a href="./assets/videos/presentacion-carrera.mp4">Descargar video</a>
                 </video>
               </div>
               <figcaption id="presentation-caption">
@@ -309,39 +335,9 @@
             Un propósito que <span class="title-accent">nos mueve.</span>
           </h2>
           <div class="purpose-grid">
-            <article id="mision" class="purpose-card reveal from-left">
-              <span class="section-label">NUESTRO PRESENTE</span>
-              <h3 id="mission-title">Nuestra misión</h3>
-              <p>
-                Brindar una oferta académica que responda a formar profesionales
-                capaces de desarrollar la gestión estratégica y operativa en una
-                organización y el manejo de herramientas de marketing y ventas,
-                haciendo un buen uso de los recursos financieros, respondiendo a
-                necesidades del contexto, en el marco de la sostenibilidad, con
-                un enfoque de equidad de género e interculturalidad.
-              </p>
-            </article>
-            <article
-              id="vision"
-              class="purpose-card reveal from-right"
-              style="--delay: 120ms"
-            >
-              <span class="section-label">NUESTRO FUTURO</span>
-              <h3 id="vision-title">Nuestra visión</h3>
-              <p>
-                Ser una carrera reconocida en el ámbito nacional e internacional
-                por formar profesionales competentes en el manejo de
-                herramientas de gestión administrativa, diseño e implementación
-                de estrategias de marketing y manejo eficiente de los recursos
-                financieros de las organizaciones en el marco de la
-                responsabilidad social, cultural, económica, ambiental y el
-                emprendimiento.
-              </p>
-            </article>
             <article
               id="perfil"
               class="purpose-card purpose-profile reveal"
-              style="--delay: 180ms"
             >
               <span class="section-label">PERFIL PROFESIONAL</span>
               <h3 id="profile-title">Perfil del ingeniero comercial</h3>
@@ -356,6 +352,39 @@
                 interculturalidad.
               </p>
             </article>
+            <article
+              id="mision"
+              class="purpose-card reveal from-left"
+              style="--delay: 80ms"
+            >
+              <span class="section-label">NUESTRO PRESENTE</span>
+              <h3 id="mission-title">Nuestra misión</h3>
+              <p>
+                Brindar una oferta académica que responda a formar profesionales
+                capaces de desarrollar la gestión estratégica y operativa en una
+                organización y el manejo de herramientas de marketing y ventas,
+                haciendo un buen uso de los recursos financieros, respondiendo a
+                necesidades del contexto, en el marco de la sostenibilidad, con
+                un enfoque de equidad de género e interculturalidad.
+              </p>
+            </article>
+            <article
+              id="vision"
+              class="purpose-card reveal from-right"
+              style="--delay: 160ms"
+            >
+              <span class="section-label">NUESTRO FUTURO</span>
+              <h3 id="vision-title">Nuestra visión</h3>
+              <p>
+                Ser una carrera reconocida en el ámbito nacional e internacional
+                por formar profesionales competentes en el manejo de
+                herramientas de gestión administrativa, diseño e implementación
+                de estrategias de marketing y manejo eficiente de los recursos
+                financieros de las organizaciones en el marco de la
+                responsabilidad social, cultural, económica, ambiental y el
+                emprendimiento.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -364,7 +393,8 @@
           <div class="spaces-heading reveal from-left">
             <span class="section-label">NOSOTROS</span>
             <h2 class="section-title" id="spaces-title">
-              Nosotros <span class="title-accent">ofrecemos.</span>
+              Fortalecemos tu formación académica
+              <span class="title-accent">con infraestructura de vanguardia, como ser:</span>
             </h2>
           </div>
           <ol class="spaces-grid">
