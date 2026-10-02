@@ -22,7 +22,7 @@ Landing estática publicada en https://luchonoprograma.github.io/ingenieria-come
 - El video vertical de TikTok de la propia carrera (`tiktok-ing-comercial.mp4`) acompaña a Campo laboral y reemplaza al video de la referencia. Comunidad no lleva video: su panel ocupa todo el ancho, con el texto a la izquierda y el botón de WhatsApp y el enlace de TikTok a la derecha (apilados en pantallas estrechas). La sección «Actividades de la carrera» se retiró por indicación del solicitante.
 - Perfil de TikTok tomado de la marca de agua de los videos: `@uap_1993`.
 - Entrada suave: desenfoque de 5 px a pantalla completa que espera la carga (máximo 900 ms) y se disuelve en 450 ms, con salida de seguridad de 2,5 s y soporte de movimiento reducido. Apariciones laterales leves al desplazarse y navegación móvil.
-- Registro como acción principal en cabecera, portada y bloque final independiente; abre el formulario de Google actualizado (https://forms.gle/ht4mN36mTU5DA6AP8). El acceso a WhatsApp ocupa un bloque separado, con mayor espaciado.
+- Registro como acción principal en cabecera, portada y bloque final independiente; abre el formulario de Google actualizado (https://forms.gle/ht4mN36mTU5DA6AP8). El acceso a WhatsApp ocupa un bloque separado, con mayor espaciado. En la portada, junto a «Regístrate», y en la misma línea, un botón verde «Únete al grupo de / WhatsApp» (texto en dos líneas para que quepa) lleva al mismo grupo y reemplaza a «Más información».
 
 ## Fuentes
 
