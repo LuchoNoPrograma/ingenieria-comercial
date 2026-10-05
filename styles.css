@@ -292,6 +292,52 @@ h1 {
   font-weight: 500;
   opacity: 0.9;
 }
+/* The two main buttons share a row; the download spans both underneath,
+   so the three read as one block instead of a stray button. */
+.hero-actions:has(.plan-download) {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  row-gap: 34px;
+}
+/* Quiet outline so it never competes with Regístrate or WhatsApp. */
+.plan-download {
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 0;
+  padding: 10px 16px;
+  border: 1.5px solid #b9c3da;
+  color: var(--blue);
+  background: #ffffff80;
+}
+.plan-download:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue);
+  background: #fff;
+}
+.plan-download svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.plan-download > span {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 1.15;
+  text-align: left;
+}
+.plan-download small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
 .hero-whatsapp > img {
   width: 38px;
   height: 38px;
@@ -305,6 +351,16 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 30px;
+}
+/* The fifth card closes the two-column grid at full width. */
+@media (min-width: 721px) {
+  .photo-card-wide {
+    grid-column: 1 / -1;
+    min-height: 420px;
+  }
+  .photo-card-wide figcaption p {
+    max-width: 760px;
+  }
 }
 /* The caption sets the card height so long descriptions never overflow. */
 .photo-card {
